@@ -70,11 +70,18 @@
       if (tg.MainButton.isVisible){ //если кнопка показана 
          tg.MainButton.enable() //показываем 
          tg.sendData("some string that we need to send");
+         fetchAsync("https://api.telegram.org/5558689984:AAHktTbnkTXsBAdPX59CuBeqYC1gkmUC2pE/answerWebAppQuery")
       }
       else{ //иначе
          tg.MainButton.show() //показываем 
       }
    });
+   
+   async function fetchAsync (url) {
+    let response = await fetch(url);
+    let data = await response.json();
+    return data;
+   }
 
    let btnED = document.getElementById("btnED"); //получаем кнопку активировать/деактивировать
    btnED.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
