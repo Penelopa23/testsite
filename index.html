@@ -70,7 +70,8 @@
          tg.MainButton.hide() //скрываем кнопку 
       }
       else{ //иначе
-         console.log("tg.initDataUnsafe.user.first_name")
+         console.log(tg.initDataUnsafe.user.first_name)
+         tg.sendData("some string that we need to send");
          tg.MainButton.show() //показываем 
       }
    });
