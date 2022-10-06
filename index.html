@@ -57,21 +57,21 @@
 
    tg.expand(); //расширяем на все окно  
 
-   tg.MainButton.text = "Changed Text"; //изменяем текст кнопки 
-   tg.MainButton.setText("Changed Text1"); //изменяем текст кнопки иначе
+   tg.MainButton.text = "View Order"; //изменяем текст кнопки 
    tg.MainButton.textColor = "#F55353"; //изменяем цвет текста кнопки
    tg.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
-   tg.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры
+//    tg.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры
+   tg.MainButton.show() //показываем 
+   tg.MainButton.enable() //показываем 
 
    let btn = document.getElementById("btn"); //получаем кнопку скрыть/показать 
 
    btn.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
       if (tg.MainButton.isVisible){ //если кнопка показана 
-         tg.MainButton.hide() //скрываем кнопку 
+         tg.MainButton.enable() //показываем 
+         tg.sendData("some string that we need to send");
       }
       else{ //иначе
-         console.log(tg.initDataUnsafe.user.first_name)
-         tg.sendData("some string that we need to send");
          tg.MainButton.show() //показываем 
       }
    });
