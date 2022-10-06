@@ -70,6 +70,7 @@
          tg.MainButton.hide() //скрываем кнопку 
       }
       else{ //иначе
+         console.log("tg.initDataUnsafe.user.first_name")
          tg.MainButton.show() //показываем 
       }
    });
@@ -87,7 +88,8 @@
    });
 
    Telegram.WebApp.onEvent('mainButtonClicked', function(){
-      tg.sendData("some string that we need to send"); 
+      tg.sendData("some string that we need to send");
+      console.log("tg.initDataUnsafe.user.last_name")
       //при клике на основную кнопку отправляем данные в строковом виде
    });
 
