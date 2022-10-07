@@ -88,7 +88,7 @@
    Telegram.WebApp.onEvent('mainButtonClicked', function(){
       tg.sendData("some string that we need to send");
       console.log(tg.initDataUnsafe.query_id)
-
+      answerWebAppQuery();
       //при клике на основную кнопку отправляем данные в строковом виде
    });
    
@@ -110,11 +110,11 @@
    
    
    
-   async function fetchAsync (url) {
-       fetch(url)
-         .then(res => res.json())
-         .then(json => console.log(json));
-   }
+//    async function fetchAsync (url) {
+//        fetch(url)
+//          .then(res => res.json())
+//          .then(json => console.log(json));
+//    }
    
 
    let usercard = document.getElementById("usercard"); //получаем блок usercard 
