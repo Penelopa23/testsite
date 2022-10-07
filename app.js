@@ -20,7 +20,7 @@ btn1.addEventListener("click", function(){
     if(tg.MainButton.isVisible) {
         tg.MainButton.hide();
     }else{
-        tg.MainButton.setText("Chicken burger);
+        tg.MainButton.setText("Chicken burger");
         item = "1";
         tg.MainButton.show();
     }
