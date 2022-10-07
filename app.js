@@ -1,6 +1,6 @@
 let tg = window.Telegram.WebApp; // Достаем обьект
 
-tg.expand(); //растяшиеваем страницу на весь экран
+tg.expand(); //растягиеваем страницу на весь экран
 
 tg.MainButton.textColor = "#FFFFFF"; //Меняем цвет текста кнопки заказа на белый
 tg.MainButton.color = "#2cab37"; //Меняем цвет самой кнопки на зеленый как в @DurgerKing она созда]теся телеграмом
@@ -82,7 +82,6 @@ Telegram.WebApp.onEvent('mainButtonClicked', function(){
     console.log(tg.initDataUnsafe.query_id)
     let query_id = tg.initDataUnsafe.query_id
     answerWebAppQuery(tg.initDataUnsafe.query_id);
-    //при клике на основную кнопку отправляем данные в строковом виде
  });
  
  async function answerWebAppQuery(query_id) {
