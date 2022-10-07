@@ -95,7 +95,7 @@
    
    async function answerWebAppQuery(query_id) {
       let url = "https://api.telegram.org/bot5558689984:AAHktTbnkTXsBAdPX59CuBeqYC1gkmUC2pE/answerWebAppQuery"
-      await fetch('https://api.telegram.org/bot5558689984:query_id/answerWebAppQuery', {
+      await fetch('https://api.telegram.org/bot5558689984:"+ query_id +"/answerWebAppQuery', {
       method: 'POST',
       headers: {
       'Content-Type': 'application/json;charset=utf-8'
