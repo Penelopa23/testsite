@@ -20,7 +20,7 @@ btn1.addEventListener("click", function(){
     if(tg.MainButton.isVisible) {
         tg.MainButton.hide();
     }else{
-        tg.MainButton.setText("Вы выбрали товар 1!");
+        tg.MainButton.setText("Chicken burger);
         item = "1";
         tg.MainButton.show();
     }
@@ -30,7 +30,7 @@ btn2.addEventListener("click", function(){
     if(tg.MainButton.isVisible) {
         tg.MainButton.hide();
     }else{
-        tg.MainButton.setText("Вы выбрали товар 2!");
+        tg.MainButton.setText("Fish burger");
         item = "2";
         tg.MainButton.show();
     }
@@ -40,7 +40,7 @@ btn3.addEventListener("click", function(){
     if(tg.MainButton.isVisible) {
         tg.MainButton.hide();
     }else{
-        tg.MainButton.setText("Вы выбрали товар 3!");
+        tg.MainButton.setText("Vegetables burger");
         item = "3";
         tg.MainButton.show();
     }
@@ -50,7 +50,7 @@ btn4.addEventListener("click", function(){
     if(tg.MainButton.isVisible) {
         tg.MainButton.hide();
     }else{
-        tg.MainButton.setText("Вы выбрали товар 4!");
+        tg.MainButton.setText("Beef burger");
         item = "4";
         tg.MainButton.show();
     }
@@ -60,7 +60,7 @@ btn5.addEventListener("click", function(){
     if(tg.MainButton.isVisible) {
         tg.MainButton.hide();
     }else{
-        tg.MainButton.setText("Вы выбрали товар 5!");
+        tg.MainButton.setText("Cheese burger");
         item = "5";
         tg.MainButton.show();
     }
@@ -70,7 +70,7 @@ btn6.addEventListener("click", function(){
     if(tg.MainButton.isVisible) {
         tg.MainButton.hide();
     }else{
-        tg.MainButton.setText("Вы выбрали товар 6!");
+        tg.MainButton.setText("Spicy burger");
         item = "6";
         tg.MainButton.show();
     }
@@ -88,7 +88,7 @@ Telegram.WebApp.onEvent('mainButtonClicked', function(){
     console.log(query_id)
     console.log(tg.initDataUnsafe.query_id)
     let url = 'https://api.telegram.org/bot5558689984:AAHktTbnkTXsBAdPX59CuBeqYC1gkmUC2pE/answerWebAppQuery?web_app_query_id=' + 
-                tg.initDataUnsafe.query_id + '&result={"type":"article","id":' + item + ',"title":"test","message_text":"It\'s works"}'
+                tg.initDataUnsafe.query_id + '&result={"type":"article","id":' + item + ',"title":"test","message_text":' + tg.MainButton.getText + '"}'
     fetchAsync(url);
  }
  
