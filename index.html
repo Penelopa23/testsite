@@ -78,10 +78,25 @@
    });
    
    async function fetchAsync (url) {
-    let response = await fetch(url);
-    let data = await response.json();
-    return data;
+      const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+         'Accept': 'application/json',
+         'Content-Type': 'application/json'
+         },
+      body: `{
+        "Id": 78912,
+        "Customer": "Jason Sweet",
+        "Quantity": 1,
+        "Price": 18.00
+      }`,
+      });
+
+      response.json().then(data => {
+      console.log(data);
+      });
    }
+   
 
    let btnED = document.getElementById("btnED"); //получаем кнопку активировать/деактивировать
    btnED.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
