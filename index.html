@@ -61,18 +61,12 @@
    tg.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
 //    tg.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры
    tg.MainButton.show() //показываем 
-   tg.MainButton.enable() //показываем 
 
    let btn = document.getElementById("btn"); //получаем кнопку скрыть/показать 
 
    btn.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
       if (tg.MainButton.isVisible){ //если кнопка показана 
          tg.MainButton.enable() //показываем 
-//          tg.sendData("some string that we need to send");
-         console.log(tg.initData.query.id)
-         console.log(tg.InlineQueryResult)
-         tg.answerWebAppQuery(tg.initData.query.id, )
-         fetchAsync("https://api.telegram.org/5558689984:AAHktTbnkTXsBAdPX59CuBeqYC1gkmUC2pE/answerWebAppQuery")
       }
       else{ //иначе
          tg.MainButton.show() //показываем 
@@ -93,13 +87,28 @@
 
    Telegram.WebApp.onEvent('mainButtonClicked', function(){
       tg.sendData("some string that we need to send");
-//       console.log(tg.initData)
       console.log(tg.initDataUnsafe.query_id)
-      console.log(tg)
-      tg.answerWebAppQuery()
-      fetchAsync("https://api.telegram.org/5558689984:AAHktTbnkTXsBAdPX59CuBeqYC1gkmUC2pE/answerWebAppQuery(tg.initDataUnsafe.query_id)")
+
       //при клике на основную кнопку отправляем данные в строковом виде
    });
+   
+   async function answerWebAppQuery() {
+      let url = "https://api.telegram.org/bot5558689984:AAHktTbnkTXsBAdPX59CuBeqYC1gkmUC2pE/answerWebAppQuery"
+      await fetch('https://api.telegram.org/bot5558689984:${tg.initDataUnsafe.query_id}/answerWebAppQuery', {
+      method: 'POST',
+      headers: {
+      'Content-Type': 'application/json;charset=utf-8'
+      },
+      body: {
+         "type": "article",
+         "id": "25",
+         "title":"SomeText",
+         "message_text": "it's work"
+      });
+      
+   }
+   
+   
    
    async function fetchAsync (url) {
        fetch(url)
