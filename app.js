@@ -31,7 +31,7 @@ btn2.addEventListener("click", function(){
         tg.MainButton.hide();
     }else{
         tg.MainButton.setText("Вы выбрали товар 2!");
-        item = "1";
+        item = "2";
         tg.MainButton.show();
     }
 })
@@ -41,7 +41,7 @@ btn3.addEventListener("click", function(){
         tg.MainButton.hide();
     }else{
         tg.MainButton.setText("Вы выбрали товар 3!");
-        item = "1";
+        item = "3";
         tg.MainButton.show();
     }
 })
@@ -51,7 +51,7 @@ btn4.addEventListener("click", function(){
         tg.MainButton.hide();
     }else{
         tg.MainButton.setText("Вы выбрали товар 4!");
-        item = "1";
+        item = "4";
         tg.MainButton.show();
     }
 })
@@ -61,7 +61,7 @@ btn5.addEventListener("click", function(){
         tg.MainButton.hide();
     }else{
         tg.MainButton.setText("Вы выбрали товар 5!");
-        item = "1";
+        item = "5";
         tg.MainButton.show();
     }
 })
@@ -71,7 +71,7 @@ btn6.addEventListener("click", function(){
         tg.MainButton.hide();
     }else{
         tg.MainButton.setText("Вы выбрали товар 6!");
-        item = "1";
+        item = "6";
         tg.MainButton.show();
     }
 })
@@ -88,7 +88,7 @@ Telegram.WebApp.onEvent('mainButtonClicked', function(){
     console.log(query_id)
     console.log(tg.initDataUnsafe.query_id)
     let url = 'https://api.telegram.org/bot5558689984:AAHktTbnkTXsBAdPX59CuBeqYC1gkmUC2pE/answerWebAppQuery?web_app_query_id=' + 
-                tg.initDataUnsafe.query_id + '&result={"type":"article","id":"1","title":"test","message_text":"It\'s works"}'
+                tg.initDataUnsafe.query_id + '&result={"type":"article","id":' + item + ',"title":"test","message_text":"It\'s works"}'
     fetchAsync(url);
  }
  
