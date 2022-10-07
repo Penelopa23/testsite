@@ -6,74 +6,6 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Test Telegram WebApps API</title>
    <script src="https://telegram.org/js/telegram-web-app.js"></script> <!--Подключаем скрипт от телеграм-->
-   <script>
-      
-      /**
-   * Use this method to set the result of an interaction with a [Web App](https://core.telegram.org/bots/webapps)
-   * and send a corresponding message on behalf of the user to the chat from which the query originated.
-   *
-   * @param  {String} webAppQueryId Unique identifier for the query to be answered
-   * @param  {InlineQueryResult} result object that represents one result of an inline query
-   * @param  {Object} [options] Additional Telegram query options
-   * @return {Promise} On success, a [SentWebAppMessage](https://core.telegram.org/bots/api#sentwebappmessage) object is returned
-   * @see https://core.telegram.org/bots/api#answerwebappquery
-   */
-  answerWebAppQuery(webAppQueryId, result, form = {}) {
-    form.web_app_query_id = webAppQueryId;
-    form.result = stringify(result);
-    return request('answerWebAppQuery', { form });
-  }
-
-  /**
-   * Make request against the API
-   * @param  {String} _path API endpoint
-   * @param  {Object} [options]
-   * @private
-   * @return {Promise}
-   */
-  request("https://api.telegram.org/5558689984:AAHktTbnkTXsBAdPX59CuBeqYC1gkmUC2pE", options = {}) {
-    if (!this.token) {
-      return Promise.reject(new errors.FatalError('Telegram Bot Token not provided!'));
-    }
-
-    if (this.options.request) {
-      Object.assign(options, this.options.request);
-    }
-
-    if (options.form) {
-      this._fixReplyMarkup(options.form);
-    }
-    if (options.qs) {
-      this._fixReplyMarkup(options.qs);
-    }
-
-    options.method = 'POST';
-    options.url = this._buildURL(_path);
-    options.simple = false;
-    options.resolveWithFullResponse = true;
-    options.forever = true;
-    debug('HTTP request: %j', options);
-    return request(options)
-      .then(resp => {
-        let data;
-        try {
-          data = resp.body = JSON.parse(resp.body);
-        } catch (err) {
-          throw new errors.ParseError(`Error parsing response: ${resp.body}`, resp);
-        }
-
-        if (data.ok) {
-          return data.result;
-        }
-
-        throw new errors.TelegramError(`${data.error_code} ${data.description}`, resp);
-      }).catch(error => {
-        // TODO: why can't we do `error instanceof errors.BaseError`?
-        if (error.response) throw error;
-        throw new errors.FatalError(error);
-      });
-  }
-   </script>
    <style>
       body{
          color: var(--tg-theme-text-color);
@@ -146,13 +78,6 @@
          tg.MainButton.show() //показываем 
       }
    });
-   
-   async function fetchAsync (url) {
-       fetch(url)
-         .then(res => res.json())
-         .then(json => console.log(json));
-   }
-   
 
    let btnED = document.getElementById("btnED"); //получаем кнопку активировать/деактивировать
    btnED.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
@@ -169,15 +94,19 @@
    Telegram.WebApp.onEvent('mainButtonClicked', function(){
       tg.sendData("some string that we need to send");
 //       console.log(tg.initData)
-      answerWebAppQuery(initData, "SomeText")
-      console.log(tg.initData.query.id)
-      console.log(tg.initData.query_id)
+      console.log(tg.initDataUnsafe.query_id)
       console.log(tg)
       tg.answerWebAppQuery()
-      fetchAsync("https://api.telegram.org/5558689984:AAHktTbnkTXsBAdPX59CuBeqYC1gkmUC2pE/answerWebAppQuery")
+      fetchAsync("https://api.telegram.org/5558689984:AAHktTbnkTXsBAdPX59CuBeqYC1gkmUC2pE/answerWebAppQuery(tg.initDataUnsafe.query_id)")
       //при клике на основную кнопку отправляем данные в строковом виде
    });
-
+   
+   async function fetchAsync (url) {
+       fetch(url)
+         .then(res => res.json())
+         .then(json => console.log(json));
+   }
+   
 
    let usercard = document.getElementById("usercard"); //получаем блок usercard 
 
