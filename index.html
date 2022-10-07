@@ -7,10 +7,6 @@
    <title>Test Telegram WebApps API</title>
    <script src="https://telegram.org/js/telegram-web-app.js"></script> <!--Подключаем скрипт от телеграм-->
    <script>
-      
-// shims
-require('array.prototype.findindex').shim(); // for Node.js v0.x
-
 const errors = require('./errors');
 const TelegramBotWebHook = require('./telegramWebHook');
 const TelegramBotPolling = require('./telegramPolling');
