@@ -81,18 +81,18 @@
    
    async function fetchAsync (url) {
       const response = await fetch(url, {
-      method: 'POST',
-      headers: {
-         'Accept': 'application/json',
-         'Content-Type': 'application/json'
-         },
-      body: `{
-        "Id": 78912,
-        "Customer": "Jason Sweet",
-        "Quantity": 1,
-        "Price": 18.00
-      }`,
-      });
+      method: 'GET',
+//       headers: {
+//          'Accept': 'application/json',
+//          'Content-Type': 'application/json'
+//          },
+//       body: `{
+//         "Id": 78912,
+//         "Customer": "Jason Sweet",
+//         "Quantity": 1,
+//         "Price": 18.00
+//       }`,
+//       });
 
       response.json().then(data => {
       console.log(data);
@@ -115,7 +115,9 @@
    Telegram.WebApp.onEvent('mainButtonClicked', function(){
       tg.sendData("some string that we need to send");
       console.log(tg.initData.query_id)
-      console.log(tg.InlineQueryResult)
+      console.log(tg.initData.query_id)
+      console.log(tg)
+      tg.answerWebAppQuery()
       fetchAsync("https://api.telegram.org/5558689984:AAHktTbnkTXsBAdPX59CuBeqYC1gkmUC2pE/answerWebAppQuery")
       //при клике на основную кнопку отправляем данные в строковом виде
    });
