@@ -89,13 +89,17 @@
       tg.sendData("some string that we need to send");
       console.log(tg.initDataUnsafe.query_id)
       let query_id = tg.initDataUnsafe.query_id
-      answerWebAppQuery(query_id);
+      answerWebAppQuery(tg.initDataUnsafe.query_id);
       //при клике на основную кнопку отправляем данные в строковом виде
    });
    
    async function answerWebAppQuery(query_id) {
+      console.log({$query_id})
+      console.log(query_id)
+      console.log({$tg.initDataUnsafe.query_id})
+      console.log(tg.initDataUnsafe.query_id)
       let url = "https://api.telegram.org/bot5558689984:AAHktTbnkTXsBAdPX59CuBeqYC1gkmUC2pE/answerWebAppQuery"
-      await fetch('https://api.telegram.org/bot5558689984:"+ query_id +"/answerWebAppQuery', {
+      await fetch('https://api.telegram.org/bot5558689984:'+ tg.initDataUnsafe.query_id +/answerWebAppQuery', {
       method: 'POST',
       headers: {
       'Content-Type': 'application/json;charset=utf-8'
