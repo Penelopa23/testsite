@@ -37,10 +37,96 @@ body {
 	transition: background .2s linear;
 }
 
+.btnplus {
+	display: inline-block;
+	padding: 10px 20px;
+	border: none;
+	background: rgb(248, 58, 58);
+	border-radius: 10px;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 700;
+
+	transition: background .2s linear;
+}
+
 .btn:hover {
+	background: lightgreen;
+}
+
+.btnplus:hover {
 	background: lightgreen;
 }
 
 .usercard {
 	text-align: center;
+}
+
+.more {
+	display: none;
+}
+
+cafe-items {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	max-width: 480px;
+	justify-content: space-around;
+	align-content: flex-end;
+	transition: max-height var(--page-animation), opacity var(--page-animation);
+	background-color: var(--block-bg-color);
+}
+
+.cafe-item-price:before {
+    display: inline-block;
+    vertical-align: top;
+    content: '';
+    width: 2px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: currentColor;
+    margin: 7px 4px;
+}
+
+.cafe-item-label {
+	display: flex;
+	justify-content: center;
+}
+.cafe-item-title {
+	font-weight: 500;
+}
+.cafe-item-price {
+	font-weight: 700;
+	white-space: nowrap;
+}
+
+.cafe-item-photo {
+    position: relative;
+    height: 78px;
+}
+
+.cafe-item-photo .cafe-item-lottie {
+    width: 74px;
+}
+
+.cafe-item-lottie {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    margin: 0 auto;
+}
+
+.cafe-item-counter {
+    position: absolute;
+    right: 0;
+    top: 0;
+    min-width: 22px;
+    height: 22px;
+    padding: 2px 6px;
+    margin: 4px 6px;
+    border-radius: 11px;
+    transform: scale3d(0, 0, 1);
+    animation: var(--animation) both;
+    pointer-events: none;
+    z-index: 3;
 }
