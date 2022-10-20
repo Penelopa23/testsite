@@ -8,7 +8,7 @@ tg.MainButton.color = "#2cab37"; //Меняем цвет самой кнопки
 let item = ""; //переменная куда складывается то что выбрали
 
 // Получить значение из sessionStorage
-var map = sessionStorage.getItem('result');
+var bucket = sessionStorage.getItem('bucket');
 
 
 

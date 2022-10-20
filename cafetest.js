@@ -235,15 +235,6 @@ flanMinus.addEventListener("click", function(){
     checkForMainButton();
 })
 
-Telegram.WebApp.onEvent('mainButtonClicked', function(){
-    document.location.href = "bucket.html";
-
- });
-// tg.MainButton.addEventListener("click", function(){
-//     document.location.href = "bucket.html";
-// })
-
-
 function plus(button, count, amount, name) {
     if(amount > 0) {
         count.style = "animation-name: badge-show;";
@@ -279,6 +270,11 @@ function checkForMainButton() {
         tg.MainButton.hide();
     }
 }
+
+Telegram.WebApp.onEvent('mainButtonClicked', function(){
+    sessionStorage.add(bucket);
+    document.location.href = "bucket.html";
+ });
 
 
 
