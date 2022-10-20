@@ -6,7 +6,7 @@ tg.MainButton.textColor = "#FFFFFF"; //Меняем цвет текста кно
 tg.MainButton.color = "#2cab37"; //Меняем цвет самой кнопки на зеленый как в @DurgerKing она созда]теся телеграмом
 
 let cost = 0;
-
+let message = "Order summary: \n";
 //Получить значение из localStorage
 bucket = new Map(JSON.parse(localStorage.myMap));
 
@@ -30,6 +30,8 @@ function setBill(name, amount) {
    //Умножаем стоимость одного товара на его количество
    let price = costOneProduct * amount;
    cost += price;
+
+   message += name + "x" + amount + " - " + price + "\n"; 
    //Вставляем стоимость товара
    priceOneProduct.innerText = "$" + price;
 }
@@ -49,8 +51,8 @@ Telegram.WebApp.onEvent('mainButtonClicked', function(){
  
  async function answerWebAppQuery(query_id) {
    //Переводим мапу в строку для вставки в запрос и экранируем кавычки в сообщении
-   let message = JSON.stringify(Array.from(bucket.entries())).replace(/\"/g, "\\\"");
-   
+   //let message = JSON.stringify(Array.from(bucket.entries())).replace(/\"/g, "\\\"");
+   console.log(message);
    //Создаём запрос
     let url = 'https://api.telegram.org/bot5558689984:AAHktTbnkTXsBAdPX59CuBeqYC1gkmUC2pE/answerWebAppQuery?web_app_query_id=' + 
                 tg.initDataUnsafe.query_id + '&result={"type":"article","id":' + cost + ',"title":"' + message + '","message_text":"You order is accepted"}'
