@@ -264,7 +264,6 @@ function checkForMainButton() {
     for(let amount of bucket.values()) {
         count += amount;
     }
-    console.log(count);
     if (count > 0) {
         tg.MainButton.show();
     } else {
