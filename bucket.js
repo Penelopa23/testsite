@@ -12,10 +12,14 @@ bucket = new Map(JSON.parse(localStorage.myMap));
 
 for(let entry of bucket) {
    //Получаем имя и количество выбранных товаров
-   setBill(entry[0], entry[1])
+   if(entry[1] > 0) {
+   setBill(entry[0], entry[1]);
+   }
 }
 
 function setBill(name, amount) {
+   let visible = document.getElementById(name + "Show");
+   visible.classList.add("selected");
    //Достаём элемент количества товара
    let product = document.getElementById( name + "Amount");
    //Вставляем значение
