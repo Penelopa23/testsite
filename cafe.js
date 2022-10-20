@@ -1,10 +1,4 @@
-(function($) {
-    $.fn.redraw = function() {
-      return this.map(function(){ this.offsetTop; return this; });
-    };
-  })(jQuery);
-  
-  var Cafe = {
+    var Cafe = {
     canPay: false,
     modeOrder: false,
     totalPrice: 0,
