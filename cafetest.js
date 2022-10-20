@@ -54,13 +54,13 @@ let hotdogAmount = 0;
 
 hotdogPlus.addEventListener("click", function(){
     ++hotdogAmount;
-    plus(hotdogButtons, hotdogCount, hotdogAmount);
+    plus(hotdogButtons, hotdogCount, hotdogAmount, "hotdogs");
     checkForMainButton();
 })
 
 hotdogMinus.addEventListener("click", function(){
     --hotdogAmount
-    minus(hotdogButtons, hotdogCount, hotdogAmount);
+    minus(hotdogButtons, hotdogCount, hotdogAmount, "hotdogs");
     checkForMainButton();
 })
 
@@ -73,13 +73,13 @@ let takoAmount = 0;
 
 takoPlus.addEventListener("click", function(){
     ++takoAmount;
-    plus(takoButtons, takoCount, takoAmount);
+    plus(takoButtons, takoCount, takoAmount, "tako");
     checkForMainButton();
 })
 
 takoMinus.addEventListener("click", function(){
     --takoAmount
-    minus(takoButtons, takoCount, takoAmount);
+    minus(takoButtons, takoCount, takoAmount, "takos");
     checkForMainButton();
 })
 
@@ -92,17 +92,155 @@ let pizzaAmount = 0;
 
 pizzaPlus.addEventListener("click", function(){
     pizzaAmount++;
-    plus(pizzaButtons, pizzaCount, pizzaAmount);
+    plus(pizzaButtons, pizzaCount, pizzaAmount, "pizzas");
     checkForMainButton();
 })
 
 pizzaMinus.addEventListener("click", function(){
     pizzaAmount--;
-    minus(pizzaButtons, pizzaCount, pizzaAmount);
+    minus(pizzaButtons, pizzaCount, pizzaAmount, "pizzas");
     checkForMainButton();
 })
-// tg.MainButton.addEventListener("click", function(){
 
+//Donats
+let donutPlus = document.getElementById("donatPlus");
+let donutMinus = document.getElementById("donutMinus");
+let donutCount = document.getElementById("6");
+let donutButtons = document.getElementById("donutButtons");
+let donutAmount = 0;
+
+donutPlus.addEventListener("click", function(){
+    donutAmount++;
+    plus(donutButtons, donutCount, donutAmount, "donuts");
+    checkForMainButton();
+})
+
+donutMinus.addEventListener("click", function(){
+    donutAmount--;
+    minus(donutButtons, donutCount, donutAmount, "donuts");
+    checkForMainButton();
+})
+
+//Popcorn
+let popcornPlus = document.getElementById("popcornPlus");
+let popcornMinus = document.getElementById("popcornMinus");
+let popcornCount = document.getElementById("7");
+let popcornButtons = document.getElementById("popcornButtons");
+let popcornAmount = 0;
+
+popcornPlus.addEventListener("click", function(){
+    popcornAmount++;
+    plus(popcornButtons, popcornCount, popcornAmount, "popcorn");
+    checkForMainButton();
+})
+
+popcornMinus.addEventListener("click", function(){
+    popcornAmount--;
+    minus(popcornButtons, popcornCount, popcornAmount, "popcorn");
+    checkForMainButton();
+})
+
+//Coke
+let cokePlus = document.getElementById("cokePlus");
+let cokeMinus = document.getElementById("cokeMinus");
+let cokeCount = document.getElementById("8");
+let cokenButtons = document.getElementById("cokeButtons");
+let cokeAmount = 0;
+
+cokePlus.addEventListener("click", function(){
+    cokeAmount++;
+    plus(cokeButtons, cokeCount, cokeAmount, "coke");
+    checkForMainButton();
+})
+
+cokeMinus.addEventListener("click", function(){
+    pcokeAmount--;
+    minus(cokeButtons, cokeCount, cokeAmount, "coke");
+    checkForMainButton();
+})
+
+//Cake
+let cakePlus = document.getElementById("cakePlus");
+let cakeMinus = document.getElementById("cakeMinus");
+let cakeCount = document.getElementById("9");
+let cakenButtons = document.getElementById("cakeButtons");
+let cakeAmount = 0;
+
+cakePlus.addEventListener("click", function(){
+    cakeAmount++;
+    plus(cakeButtons, cakeCount, cakeAmount, "cake");
+    checkForMainButton();
+})
+
+cakeMinus.addEventListener("click", function(){
+    cakeAmount--;
+    minus(cakeButtons, cakeCount, cakeAmount, "cake");
+    checkForMainButton();
+})
+
+//Icecream
+let icecreamPlus = document.getElementById("icecreamPlus");
+let icecreamMinus = document.getElementById("icecreamMinus");
+let icecreamCount = document.getElementById("10");
+let icecreamButtons = document.getElementById("icecreamButtons");
+let icecreamAmount = 0;
+
+icecreamPlus.addEventListener("click", function(){
+    icecreamAmount++;
+    plus(icecreamButtons, icecreamCount, icecreamAmount, "icecream");
+    checkForMainButton();
+})
+
+icecreamMinus.addEventListener("click", function(){
+    icecreamAmount--;
+    minus(icecreamButtons, icecreamCount, icecreamAmount, "icecream");
+    checkForMainButton();
+})
+
+//Cookie
+let cookiePlus = document.getElementById("cookiePlus");
+let cookieMinus = document.getElementById("cookieMinus");
+let cookieCount = document.getElementById("11");
+let cookieButtons = document.getElementById("cookieButtons");
+let cookieAmount = 0;
+
+cookiePlus.addEventListener("click", function(){
+    cookieAmount++;
+    plus(cookieButtons, cookieCount, cookieAmount, "cookie");
+    checkForMainButton();
+})
+
+cookieMinus.addEventListener("click", function(){
+    cookieAmount--;
+    minus(cookieButtons, cookieCount, cookieAmount, "cookie");
+    checkForMainButton();
+})
+
+//Flan
+let flanPlus = document.getElementById("flanPlus");
+let flanMinus = document.getElementById("flanMinus");
+let flanCount = document.getElementById("12");
+let flanButtons = document.getElementById("flanButtons");
+let flanAmount = 0;
+
+flanPlus.addEventListener("click", function(){
+    flanAmount++;
+    plus(flanButtons, flanCount, flanAmount, "flan");
+    checkForMainButton();
+})
+
+flanMinus.addEventListener("click", function(){
+    flanAmount--;
+    minus(flanButtons, flanCount, flanAmount, "flan");
+    checkForMainButton();
+})
+
+Telegram.WebApp.onEvent('mainButtonClicked', function(){
+    document.location.href = "bucket.html";
+
+ });
+// tg.MainButton.addEventListener("click", function(){
+//     document.location.href = "bucket.html";
 // })
 
 
