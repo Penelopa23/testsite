@@ -10,6 +10,8 @@ let item = ""; //переменная куда складывается то ч�
 // Получить значение из sessionStorage
 var map = sessionStorage.getItem('result');
 
+
+
 //Отправляем данные о выбранном товаре
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
     tg.sendData("some string that we need to send");

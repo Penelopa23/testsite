@@ -1,6 +1,6 @@
 <html class="dark" style="--tg-color-scheme:dark; --tg-theme-bg-color:#212121; --tg-theme-text-color:#ffffff; --tg-theme-hint-color:#aaaaaa; --tg-theme-link-color:#8774e1; --tg-theme-button-color:#8774e1; --tg-theme-button-text-color:#ffffff; --tg-theme-secondary-bg-color:#0f0f0f; --tg-viewport-height:100vh; --tg-viewport-stable-height:100vh;"><head>
     <meta charset="utf-8">
-    <title>DurgerKingBot</title>
+    <title>TemplateWebAppBot</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, viewport-fit=cover">
     <meta name="format-detection" content="telephone=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,14 +16,12 @@
       setThemeClass();
     </script>
     <link href="cafe.css" rel="stylesheet">
-    <link href="reboot.css" rel="stylesheet">
-    <link href="Button.scss" rel="stylesheet">
 
   </head>
   
   <body style>
     <section class="cafe-page cafe-items">
-    <div class="cafe-item js-item" data-item-id="1" data-item-price="4990" id="buttons">
+    <div class="cafe-item js-item" data-item-id="1" data-item-price="4990" id="burgerButtons">
     <div class="cafe-item-counter js-item-counter" id="1">1</div>
     <div class="cafe-item-photo">
             <picture class="cafe-item-lottie">
@@ -36,16 +34,16 @@
       <span class="cafe-item-price">$4.99</span>
     </div>
     <div class="cafe-item-buttons">
-      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler" id="minus">
+      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler" id="burgerMinus">
         <span class="ripple-mask"><span class="ripple"></span></span>
       </button>
-      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler" id="plus">
+      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler" id="burgerPlus">
         <span class="button-item-label">Add</span>
         <span class="ripple-mask"><span class="ripple"></span></span>
       </button>
     </div>
-  </div>  <div class="cafe-item js-item" data-item-id="2" data-item-price="1490">
-    <div class="cafe-item-counter js-item-counter">1</div>
+  </div>  <div class="cafe-item js-item" data-item-id="2" data-item-price="1490" id="friesButtons">
+    <div class="cafe-item-counter js-item-counter" id="2">1</div>
     <div class="cafe-item-photo">
             <picture class="cafe-item-lottie js-item-lottie">
         <img srcset="./img/cafe/Fries.gif">
@@ -57,16 +55,16 @@
       <span class="cafe-item-price">$1.49</span>
     </div>
     <div class="cafe-item-buttons">
-      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler">
+      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler" id="friesMinus">
         <span class="ripple-mask"><span class="ripple"></span></span>
       </button>
-      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
+      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler" id="friesPlus">
         <span class="button-item-label">Add</span>
         <span class="ripple-mask"><span class="ripple"></span></span>
       </button>
     </div>
-  </div>  <div class="cafe-item js-item" data-item-id="3" data-item-price="3490">
-    <div class="cafe-item-counter js-item-counter">1</div>
+  </div>  <div class="cafe-item js-item" data-item-id="3" data-item-price="3490" id="hotdogButtons">
+    <div class="cafe-item-counter js-item-counter" id="3">1</div>
     <div class="cafe-item-photo">
             <picture class="cafe-item-lottie js-item-lottie">
         <img srcset="./img/cafe/Hotdog.gif">
@@ -78,16 +76,16 @@
       <span class="cafe-item-price">$3.49</span>
     </div>
     <div class="cafe-item-buttons">
-      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler">
+      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler" id="hotdogMinus">
         <span class="ripple-mask"><span class="ripple"></span></span>
       </button>
-      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
+      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler" id="hotdogPlus">
         <span class="button-item-label">Add</span>
         <span class="ripple-mask"><span class="ripple"></span></span>
       </button>
     </div>
-  </div>  <div class="cafe-item js-item" data-item-id="4" data-item-price="3990">
-    <div class="cafe-item-counter js-item-counter">1</div>
+  </div>  <div class="cafe-item js-item" data-item-id="4" data-item-price="3990" id="takoButtons">
+    <div class="cafe-item-counter js-item-counter" id="4">1</div>
     <div class="cafe-item-photo">
             <picture class="cafe-item-lottie js-item-lottie">
         <img srcset="./img/cafe/Tako.gif">
@@ -99,16 +97,16 @@
       <span class="cafe-item-price">$3.99</span>
     </div>
     <div class="cafe-item-buttons">
-      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler">
+      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler" id="takoMinus">
         <span class="ripple-mask"><span class="ripple"></span></span>
       </button>
-      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
+      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler" id="takoPlus">
         <span class="button-item-label">Add</span>
         <span class="ripple-mask"><span class="ripple"></span></span>
       </button>
     </div>
-  </div>  <div class="cafe-item js-item" data-item-id="5" data-item-price="7990">
-    <div class="cafe-item-counter js-item-counter">1</div>
+  </div>  <div class="cafe-item js-item" data-item-id="5" data-item-price="7990" id="pizzaButtons">
+    <div class="cafe-item-counter js-item-counter" id="5">1</div>
     <div class="cafe-item-photo">
             <picture class="cafe-item-lottie js-item-lottie">
         <img srcset="./img/cafe/Pizza.gif">
@@ -120,16 +118,16 @@
       <span class="cafe-item-price">$7.99</span>
     </div>
     <div class="cafe-item-buttons">
-      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler">
+      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler" id="pizzaMinus">
         <span class="ripple-mask"><span class="ripple"></span></span>
       </button>
-      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
+      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler" id="pizzaPlus">
         <span class="button-item-label">Add</span>
         <span class="ripple-mask"><span class="ripple"></span></span>
       </button>
     </div>
-  </div>  <div class="cafe-item js-item" data-item-id="6" data-item-price="1490">
-    <div class="cafe-item-counter js-item-counter">1</div>
+  </div>  <div class="cafe-item js-item" data-item-id="6" data-item-price="1490" id="donutButtons">
+    <div class="cafe-item-counter js-item-counter" id="6">1</div>
     <div class="cafe-item-photo">
             <picture class="cafe-item-lottie js-item-lottie">
         <img srcset="./img/cafe/Donut.gif">
@@ -141,16 +139,16 @@
       <span class="cafe-item-price">$1.49</span>
     </div>
     <div class="cafe-item-buttons">
-      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler">
+      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler" id="donutMinus">
         <span class="ripple-mask"><span class="ripple"></span></span>
       </button>
-      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
+      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler" id="donatPlus">
         <span class="button-item-label">Add</span>
         <span class="ripple-mask"><span class="ripple"></span></span>
       </button>
     </div>
-  </div>  <div class="cafe-item js-item" data-item-id="7" data-item-price="1990">
-    <div class="cafe-item-counter js-item-counter">1</div>
+  </div>  <div class="cafe-item js-item" data-item-id="7" data-item-price="1990" id="popcornButtons">
+    <div class="cafe-item-counter js-item-counter" id="7">1</div>
     <div class="cafe-item-photo">
             <picture class="cafe-item-lottie js-item-lottie">
         <img srcset="./img/cafe/Popcorn.gif">
@@ -162,16 +160,16 @@
       <span class="cafe-item-price">$1.99</span>
     </div>
     <div class="cafe-item-buttons">
-      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler">
+      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler" id="popcornMinus">
         <span class="ripple-mask"><span class="ripple"></span></span>
       </button>
-      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
+      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler" id="popcornPlus">
         <span class="button-item-label">Add</span>
         <span class="ripple-mask"><span class="ripple"></span></span>
       </button>
     </div>
-  </div>  <div class="cafe-item js-item" data-item-id="8" data-item-price="1490">
-    <div class="cafe-item-counter js-item-counter">1</div>
+  </div>  <div class="cafe-item js-item" data-item-id="8" data-item-price="1490" id="cokeButtons">
+    <div class="cafe-item-counter js-item-counter" id="8">1</div>
     <div class="cafe-item-photo">
             <picture class="cafe-item-lottie js-item-lottie">
         <img srcset="./img/cafe/Coke.gif">
@@ -183,16 +181,16 @@
       <span class="cafe-item-price">$1.49</span>
     </div>
     <div class="cafe-item-buttons">
-      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler">
+      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler" id="cokeMinus">
         <span class="ripple-mask"><span class="ripple"></span></span>
       </button>
-      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
+      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler" id="cokePlus">
         <span class="button-item-label">Add</span>
         <span class="ripple-mask"><span class="ripple"></span></span>
       </button>
     </div>
-  </div>  <div class="cafe-item js-item" data-item-id="9" data-item-price="10990">
-    <div class="cafe-item-counter js-item-counter">1</div>
+  </div>  <div class="cafe-item js-item" data-item-id="9" data-item-price="10990" id="cakeButtons">
+    <div class="cafe-item-counter js-item-counter" id="9">1</div>
     <div class="cafe-item-photo">
             <picture class="cafe-item-lottie js-item-lottie">
         <img srcset="./img/cafe/Cake.gif">
@@ -204,16 +202,16 @@
       <span class="cafe-item-price">$10.99</span>
     </div>
     <div class="cafe-item-buttons">
-      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler">
+      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler" id="cakeMinus">
         <span class="ripple-mask"><span class="ripple"></span></span>
       </button>
-      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
+      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler" id="cakePlus">
         <span class="button-item-label">Add</span>
         <span class="ripple-mask"><span class="ripple"></span></span>
       </button>
     </div>
-  </div>  <div class="cafe-item js-item" data-item-id="10" data-item-price="5990">
-    <div class="cafe-item-counter js-item-counter">1</div>
+  </div>  <div class="cafe-item js-item" data-item-id="10" data-item-price="5990" id="icecreamButtons">
+    <div class="cafe-item-counter js-item-counter" id="10">1</div>
     <div class="cafe-item-photo">
             <picture class="cafe-item-lottie js-item-lottie">
         <img srcset="./img/cafe/Icecream.gif">
@@ -225,16 +223,16 @@
       <span class="cafe-item-price">$5.99</span>
     </div>
     <div class="cafe-item-buttons">
-      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler">
+      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler" id="icecreamMinus">
         <span class="ripple-mask"><span class="ripple"></span></span>
       </button>
-      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
+      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler" id="icecreamPlus">
         <span class="button-item-label">Add</span>
         <span class="ripple-mask"><span class="ripple"></span></span>
       </button>
     </div>
-  </div>  <div class="cafe-item js-item" data-item-id="11" data-item-price="3990">
-    <div class="cafe-item-counter js-item-counter">1</div>
+  </div>  <div class="cafe-item js-item" data-item-id="11" data-item-price="3990" id="cookieButtons">
+    <div class="cafe-item-counter js-item-counter" id="11">1</div>
     <div class="cafe-item-photo">
             <picture class="cafe-item-lottie js-item-lottie">
         <img srcset="./img/cafe/Cookie.gif">
@@ -246,16 +244,16 @@
       <span class="cafe-item-price">$3.99</span>
     </div>
     <div class="cafe-item-buttons">
-      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler">
+      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler" id="cookieMinus">
         <span class="ripple-mask"><span class="ripple"></span></span>
       </button>
-      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
+      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler" id="cookiePlus">
         <span class="button-item-label">Add</span>
         <span class="ripple-mask"><span class="ripple"></span></span>
       </button>
     </div>
-  </div>  <div class="cafe-item js-item" data-item-id="12" data-item-price="7990">
-    <div class="cafe-item-counter js-item-counter">1</div>
+  </div>  <div class="cafe-item js-item" data-item-id="12" data-item-price="7990" id="flanButtons">
+    <div class="cafe-item-counter js-item-counter" id="12">1</div>
     <div class="cafe-item-photo">
             <picture class="cafe-item-lottie js-item-lottie">
         <img srcset="./img/cafe/Flan.gif">
@@ -267,180 +265,17 @@
       <span class="cafe-item-price">$7.99</span>
     </div>
     <div class="cafe-item-buttons">
-      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler">
+      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler" id="flanMinus">
         <span class="ripple-mask"><span class="ripple"></span></span>
       </button>
-      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
+      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler" id="flanPlus">
         <span class="button-item-label">Add</span>
         <span class="ripple-mask"><span class="ripple"></span></span>
       </button>
     </div>
   </div><div class="cafe-item-shadow"></div><div class="cafe-item-shadow"></div><div class="cafe-item-shadow"></div><div class="cafe-item-shadow"></div>
 </section>
-<section class="cafe-page cafe-order-overview">
-  <div class="cafe-block">
-    <div class="cafe-order-header-wrap">
-      <h2 class="cafe-order-header">Your Order</h2>
-      <span class="cafe-order-edit js-order-edit">Edit</span>
-    </div>
-    <div class="cafe-order-items">
-        <div class="cafe-order-item js-order-item" data-item-id="1">
-    <div class="cafe-order-item-photo">
-            <picture class="cafe-item-lottie js-item-lottie">
-        <img srcset="./img/cafe/Burger.gif">
-        
-      <canvas width="512" height="512"></canvas></picture>
-    </div>
-    <div class="cafe-order-item-label">
-      <div class="cafe-order-item-title">Burger <span class="cafe-order-item-counter"><span class="js-order-item-counter">1</span>x</span></div>
-      <div class="cafe-order-item-description">Meat™</div>
-    </div>
-    <div class="cafe-order-item-price js-order-item-price">$4.99</div>
-  </div>  <div class="cafe-order-item js-order-item" data-item-id="2">
-    <div class="cafe-order-item-photo">
-            <picture class="cafe-item-lottie js-item-lottie">
-        <img srcset="./img/cafe/Fries.gif">
-        
-      <canvas width="512" height="512"></canvas></picture>
-    </div>
-    <div class="cafe-order-item-label">
-      <div class="cafe-order-item-title">Fries <span class="cafe-order-item-counter"><span class="js-order-item-counter">1</span>x</span></div>
-      <div class="cafe-order-item-description">Po-ta-toes</div>
-    </div>
-    <div class="cafe-order-item-price js-order-item-price">$1.49</div>
-  </div>  <div class="cafe-order-item js-order-item" data-item-id="3">
-    <div class="cafe-order-item-photo">
-            <picture class="cafe-item-lottie js-item-lottie">
-        <img srcset="./img/cafe/Hotdog.gif">
-        
-      <canvas width="512" height="512"></canvas></picture>
-    </div>
-    <div class="cafe-order-item-label">
-      <div class="cafe-order-item-title">Hotdog <span class="cafe-order-item-counter"><span class="js-order-item-counter">1</span>x</span></div>
-      <div class="cafe-order-item-description">0% dog, 100% hot</div>
-    </div>
-    <div class="cafe-order-item-price js-order-item-price">$3.49</div>
-  </div>  <div class="cafe-order-item js-order-item" data-item-id="4">
-    <div class="cafe-order-item-photo">
-            <picture class="cafe-item-lottie js-item-lottie">
-        <img srcset="./img/cafe/Tako.gif">
-        
-      <canvas width="512" height="512"></canvas></picture>
-    </div>
-    <div class="cafe-order-item-label">
-      <div class="cafe-order-item-title">Tako <span class="cafe-order-item-counter"><span class="js-order-item-counter">1</span>x</span></div>
-      <div class="cafe-order-item-description">Mucho más</div>
-    </div>
-    <div class="cafe-order-item-price js-order-item-price">$3.99</div>
-  </div>  <div class="cafe-order-item js-order-item" data-item-id="5">
-    <div class="cafe-order-item-photo">
-            <picture class="cafe-item-lottie js-item-lottie">
-        <img srcset="./img/cafe/Pizza.gif">
-        
-      <canvas width="512" height="512"></canvas></picture>
-    </div>
-    <div class="cafe-order-item-label">
-      <div class="cafe-order-item-title">Pizza <span class="cafe-order-item-counter"><span class="js-order-item-counter">1</span>x</span></div>
-      <div class="cafe-order-item-description">That’s amore</div>
-    </div>
-    <div class="cafe-order-item-price js-order-item-price">$7.99</div>
-  </div>  <div class="cafe-order-item js-order-item" data-item-id="6">
-    <div class="cafe-order-item-photo">
-            <picture class="cafe-item-lottie js-item-lottie">
-        <img srcset="./img/cafe/Donut.gif">
-        
-      <canvas width="512" height="512"></canvas></picture>
-    </div>
-    <div class="cafe-order-item-label">
-      <div class="cafe-order-item-title">Donut <span class="cafe-order-item-counter"><span class="js-order-item-counter">1</span>x</span></div>
-      <div class="cafe-order-item-description">Hole included</div>
-    </div>
-    <div class="cafe-order-item-price js-order-item-price">$1.49</div>
-  </div>  <div class="cafe-order-item js-order-item" data-item-id="7">
-    <div class="cafe-order-item-photo">
-            <picture class="cafe-item-lottie js-item-lottie">
-        <img srcset="./img/cafe/Popcorn.gif">
-        
-      <canvas width="512" height="512"></canvas></picture>
-    </div>
-    <div class="cafe-order-item-label">
-      <div class="cafe-order-item-title">Popcorn <span class="cafe-order-item-counter"><span class="js-order-item-counter">1</span>x</span></div>
-      <div class="cafe-order-item-description">Lights, camera, corn</div>
-    </div>
-    <div class="cafe-order-item-price js-order-item-price">$1.99</div>
-  </div>  <div class="cafe-order-item js-order-item" data-item-id="8">
-    <div class="cafe-order-item-photo">
-            <picture class="cafe-item-lottie js-item-lottie">
-        <img srcset="./img/cafe/Coke.gif">
-        
-      <canvas width="512" height="512"></canvas></picture>
-    </div>
-    <div class="cafe-order-item-label">
-      <div class="cafe-order-item-title">Coke <span class="cafe-order-item-counter"><span class="js-order-item-counter">1</span>x</span></div>
-      <div class="cafe-order-item-description">The liquid kind</div>
-    </div>
-    <div class="cafe-order-item-price js-order-item-price">$1.49</div>
-  </div>  <div class="cafe-order-item js-order-item" data-item-id="9">
-    <div class="cafe-order-item-photo">
-            <picture class="cafe-item-lottie js-item-lottie">
-        <img srcset="./img/cafe/Cake.gif">
-        
-      <canvas width="512" height="512"></canvas></picture>
-    </div>
-    <div class="cafe-order-item-label">
-      <div class="cafe-order-item-title">Cake <span class="cafe-order-item-counter"><span class="js-order-item-counter">1</span>x</span></div>
-      <div class="cafe-order-item-description">Bread substitute</div>
-    </div>
-    <div class="cafe-order-item-price js-order-item-price">$10.99</div>
-  </div>  <div class="cafe-order-item js-order-item" data-item-id="10">
-    <div class="cafe-order-item-photo">
-            <picture class="cafe-item-lottie js-item-lottie">
-        <img srcset="./img/cafe/Icecream.gif">
-        
-      <canvas width="512" height="512"></canvas></picture>
-    </div>
-    <div class="cafe-order-item-label">
-      <div class="cafe-order-item-title">Icecream <span class="cafe-order-item-counter"><span class="js-order-item-counter">1</span>x</span></div>
-      <div class="cafe-order-item-description">Cone of shame</div>
-    </div>
-    <div class="cafe-order-item-price js-order-item-price">$5.99</div>
-  </div>  <div class="cafe-order-item js-order-item" data-item-id="11">
-    <div class="cafe-order-item-photo">
-            <picture class="cafe-item-lottie js-item-lottie">
-        <img srcset="./img/cafe/Cookie.gif">
-        
-      <canvas width="512" height="512"></canvas></picture>
-    </div>
-    <div class="cafe-order-item-label">
-      <div class="cafe-order-item-title">Cookie <span class="cafe-order-item-counter"><span class="js-order-item-counter">1</span>x</span></div>
-      <div class="cafe-order-item-description">Milk’s favorite</div>
-    </div>
-    <div class="cafe-order-item-price js-order-item-price">$3.99</div>
-  </div>  <div class="cafe-order-item js-order-item" data-item-id="12">
-    <div class="cafe-order-item-photo">
-            <picture class="cafe-item-lottie js-item-lottie">
-        <img srcset="./img/cafe/Flan.gif">
-        
-      <canvas width="512" height="512"></canvas></picture>
-    </div>
-    <div class="cafe-order-item-label">
-      <div class="cafe-order-item-title">Flan <span class="cafe-order-item-counter"><span class="js-order-item-counter">1</span>x</span></div>
-      <div class="cafe-order-item-description">Flan-tastic</div>
-    </div>
-    <div class="cafe-order-item-price js-order-item-price">$7.99</div>
-  </div>
-    </div>
-  </div>
-  <div class="cafe-text-field-wrap">
-    <textarea class="cafe-text-field js-order-comment-field cafe-block" rows="1" placeholder="Add comment…" style="overflow: hidden visible; overflow-wrap: break-word;"></textarea>
-    <div class="cafe-text-field-hint">
-      Any special requests, details, final wishes etc.
-    </div>
-  </div>
-</section>
-<div class="cafe-status-wrap">
-  <div class="cafe-status js-status"></div>
-</div>
+
     <script src="https://tg.dev/js/jquery.min.js"></script>
     <script src="https://tg.dev/js/tgsticker.js?29"></script>
     <script src="https://webappcontent.telegram.org/js/pako-inflate.min.js"></script>
