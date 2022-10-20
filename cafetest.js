@@ -15,13 +15,13 @@ let burgerButtons = document.getElementById("burgerButtons");
 let burgerAmount = 0;
 
 burgerPlus.addEventListener("click", function(){
-    ++burgerAmount;
+    burgerAmount++;
     plus(burgerButtons, burgerCount, burgerAmount, "burgers");
     checkForMainButton();
 })
 
 burgerMinus.addEventListener("click", function(){
-    --burgerAmount
+    burgerAmount--;
     minus(burgerButtons, burgerCount, burgerAmount, "burgers");
     checkForMainButton();
 })
@@ -34,13 +34,13 @@ let friesButtons = document.getElementById("friesButtons");
 let friesAmount = 0;
 
 friesPlus.addEventListener("click", function(){
-    ++friesAmount;
+    friesAmount++;
     plus(friesButtons, friesCount, friesAmount, "fries");
     checkForMainButton();
 })
 
 friesMinus.addEventListener("click", function(){
-    --friesAmount
+    friesAmount--;
     minus(friesButtons, friesCount, friesAmount, "fries");
     checkForMainButton();
 })
@@ -53,13 +53,13 @@ let hotdogButtons = document.getElementById("hotdogButtons");
 let hotdogAmount = 0;
 
 hotdogPlus.addEventListener("click", function(){
-    ++hotdogAmount;
+    hotdogAmount++;
     plus(hotdogButtons, hotdogCount, hotdogAmount, "hotdogs");
     checkForMainButton();
 })
 
 hotdogMinus.addEventListener("click", function(){
-    --hotdogAmount
+    hotdogAmount--;
     minus(hotdogButtons, hotdogCount, hotdogAmount, "hotdogs");
     checkForMainButton();
 })
@@ -72,13 +72,13 @@ let takoButtons = document.getElementById("takoButtons");
 let takoAmount = 0;
 
 takoPlus.addEventListener("click", function(){
-    ++takoAmount;
+    takoAmount++;
     plus(takoButtons, takoCount, takoAmount, "tako");
     checkForMainButton();
 })
 
 takoMinus.addEventListener("click", function(){
-    --takoAmount
+    takoAmount--;
     minus(takoButtons, takoCount, takoAmount, "takos");
     checkForMainButton();
 })
@@ -154,7 +154,7 @@ cokePlus.addEventListener("click", function(){
 })
 
 cokeMinus.addEventListener("click", function(){
-    pcokeAmount--;
+    cokeAmount--;
     minus(cokeButtons, cokeCount, cokeAmount, "coke");
     checkForMainButton();
 })
