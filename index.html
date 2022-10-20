@@ -15,15 +15,19 @@
       Telegram.WebApp.onEvent('themeChanged', setThemeClass);
       setThemeClass();
     </script>
-    <link href="https://webappcontent.telegram.org/css/cafe.css?20" rel="stylesheet">
+    <link href="cafe.css" rel="stylesheet">
+    <link href="reboot.css" rel="stylesheet">
+    <link href="Button.scss" rel="stylesheet">
+
   </head>
+  
   <body style>
     <section class="cafe-page cafe-items">
-    <div class="cafe-item js-item" data-item-id="1" data-item-price="4990">
-    <div class="cafe-item-counter js-item-counter">1</div>
+    <div class="cafe-item js-item" data-item-id="1" data-item-price="4990" id="buttons">
+    <div class="cafe-item-counter js-item-counter" id="1">1</div>
     <div class="cafe-item-photo">
             <picture class="cafe-item-lottie">
-        <img srcset="./img/cafe/Burger.gif">
+              <img srcset="./img/cafe/Burger.gif">
         
       <canvas width="148" height="148"></canvas></picture>
     </div>
@@ -32,10 +36,10 @@
       <span class="cafe-item-price">$4.99</span>
     </div>
     <div class="cafe-item-buttons">
-      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler">
+      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler" id="minus">
         <span class="ripple-mask"><span class="ripple"></span></span>
       </button>
-      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
+      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler" id="plus">
         <span class="button-item-label">Add</span>
         <span class="ripple-mask"><span class="ripple"></span></span>
       </button>
@@ -438,8 +442,9 @@
   <div class="cafe-status js-status"></div>
 </div>
     <script src="https://tg.dev/js/jquery.min.js"></script>
-    <script src="tgsticker.js"></script>
-    <script src="https://webappcontent.telegram.org/js/cafe.js?26"></script>
+    <script src="https://tg.dev/js/tgsticker.js?29"></script>
+    <script src="https://webappcontent.telegram.org/js/pako-inflate.min.js"></script>
+    <script src="cafetest.js"></script>
     <!-- <script>Cafe.init({"https://web.telegram.org/z/#5104055776":"\/cafe\/api","userId":0,"userHash":null});</script> -->
 </body>
 </html>
