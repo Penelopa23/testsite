@@ -1,5 +1,6 @@
 
 let tg = window.Telegram.WebApp; // Достаем обьект
+tg.expand(); //растягиеваем страницу на весь экран
 tg.MainButton.textColor = "#FFFFFF"; //Меняем цвет текста кнопки заказа на белый
 tg.MainButton.color = "#2cab37"; //Меняем цвет самой кнопки на зеленый как в @DurgerKing она созда]теся телеграмом
 tg.MainButton.setText("VIEW ORDER");
@@ -73,7 +74,7 @@ let takoAmount = 0;
 
 takoPlus.addEventListener("click", function(){
     takoAmount++;
-    plus(takoButtons, takoCount, takoAmount, "tako");
+    plus(takoButtons, takoCount, takoAmount, "takos");
     checkForMainButton();
 })
 
@@ -272,7 +273,8 @@ function checkForMainButton() {
 }
 
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
-    sessionStorage.setItem("bucket", bucket);
+    //Записываем мапу в локальное хранилище
+    localStorage.myMap = JSON.stringify(Array.from(bucket.entries())); 
     document.location.href = "bucket.html";
  });
 
