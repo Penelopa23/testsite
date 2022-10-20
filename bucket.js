@@ -4,14 +4,13 @@ tg.expand(); //растягиеваем страницу на весь экра�
 
 tg.MainButton.textColor = "#FFFFFF"; //Меняем цвет текста кнопки заказа на белый
 tg.MainButton.color = "#2cab37"; //Меняем цвет самой кнопки на зеленый как в @DurgerKing она созда]теся телеграмом
-tg.MainButton.show();
 
 let cost = 0;
 
 //Получить значение из localStorage
 bucket = new Map(JSON.parse(localStorage.myMap));
 
-for(let entry of bucketS) {
+for(let entry of bucket) {
    //Получаем имя и количество выбранных товаров
    setBill(entry[0], entry[1])
 }
@@ -32,6 +31,7 @@ function setBill(name, amount) {
 
 
 tg.MainButton.setText("Pay $" + cost); //Вставляем техт в кнопку
+tg.MainButton.show(); //Показываем кнопку
 
 //Отправляем данные о выбранном товаре
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
