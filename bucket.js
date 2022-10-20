@@ -53,4 +53,10 @@ Telegram.WebApp.onEvent('mainButtonClicked', function(){
                 tg.initDataUnsafe.query_id + '&result={"type":"article","id":' + cost + ',"title":"test","message_text":"' + tg.MainButton.text + '"}'
     fetchAsync(url);
  }
+
+ async function fetchAsync (url) {
+   fetch(url)
+     .then(res => res.json())
+     .then(json => console.log(json));
+}
  

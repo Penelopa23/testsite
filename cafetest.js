@@ -104,7 +104,7 @@ pizzaMinus.addEventListener("click", function(){
 })
 
 //Donats
-let donutPlus = document.getElementById("donatPlus");
+let donutPlus = document.getElementById("donutPlus");
 let donutMinus = document.getElementById("donutMinus");
 let donutCount = document.getElementById("6");
 let donutButtons = document.getElementById("donutButtons");
