@@ -272,7 +272,7 @@ function checkForMainButton() {
 }
 
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
-    sessionStorage.add(bucket);
+    sessionStorage.setItem("bucket", bucket);
     document.location.href = "bucket.html";
  });
 
