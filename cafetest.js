@@ -91,13 +91,13 @@ let pizzaButtons = document.getElementById("pizzaButtons");
 let pizzaAmount = 0;
 
 pizzaPlus.addEventListener("click", function(){
-    ++pizzaAmount;
+    pizzaAmount++;
     plus(pizzaButtons, pizzaCount, pizzaAmount);
     checkForMainButton();
 })
 
 pizzaMinus.addEventListener("click", function(){
-    --pizzaAmount
+    pizzaAmount--;
     minus(pizzaButtons, pizzaCount, pizzaAmount);
     checkForMainButton();
 })
