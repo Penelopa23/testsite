@@ -52,8 +52,8 @@ Telegram.WebApp.onEvent('mainButtonClicked', function(){
     console.log(query_id)
     console.log(tg.initDataUnsafe.query_id)
     let url = 'https://api.telegram.org/bot5558689984:AAHktTbnkTXsBAdPX59CuBeqYC1gkmUC2pE/answerWebAppQuery?web_app_query_id=' + 
-                tg.initDataUnsafe.query_id + '&result={"type":"article","id":' + cost + ',"title":"test","message_text":"' + J
-                SON.stringify(Array.from(bucket.entries())) + '"}'
+                tg.initDataUnsafe.query_id + '&result={"type":"article","id":' + cost + ',"title":"test","message_text":"' + 
+                JSON.stringify(Array.from(bucket.entries())) + '"}'
     fetchAsync(url);
  }
 
