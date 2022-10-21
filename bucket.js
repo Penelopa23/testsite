@@ -51,6 +51,7 @@ Telegram.WebApp.onEvent('mainButtonClicked', function(){
  
  async function answerWebAppQuery(query_id) {
    let message = JSON.stringify(Array.from(bucket.entries()));
+   message.match(/\"/);
    console.log(message);
     let url = 'https://api.telegram.org/bot5558689984:AAHktTbnkTXsBAdPX59CuBeqYC1gkmUC2pE/answerWebAppQuery?web_app_query_id=' + 
                 tg.initDataUnsafe.query_id + '&result={"type":"article","id":' + cost + ',"title":"test","message_text":"' + 
