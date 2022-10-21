@@ -27,7 +27,6 @@ function setBill(name, amount) {
    //Достаём цену
    let priceOneProduct = document.getElementById(name + "Price");
    let costOneProduct = Number(priceOneProduct.innerText);
-   console.log(costOneProduct);
    //Умножаем стоимость одного товара на его количество
    let price = costOneProduct * amount;
    cost += price;
@@ -35,28 +34,29 @@ function setBill(name, amount) {
    priceOneProduct.innerText = "$" + price;
 }
 
-
+//Форматируем общую стоимость чтобы не было кучи нулей после запятой
 mainCost = new Intl.NumberFormat("en", {style: "currency", currency: "USD", maximumFractionDigits: 2}).format(cost);
-bucket.set("orderPrice", cost);
-console.log(mainCost);
+//Вставлем общую стоимость в маапу чтобы потом передать в бота
+bucket.set("orderPrice", mainCost);
 tg.MainButton.setText("Pay " + mainCost); //Вставляем техт в кнопку
 tg.MainButton.show(); //Показываем кнопку
 
 //Отправляем данные о выбранном товаре
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
-   //  tg.sendData("some string that we need to send");
     let query_id = tg.initDataUnsafe.query_id
     answerWebAppQuery(tg.initDataUnsafe.query_id);
  });
  
  async function answerWebAppQuery(query_id) {
-   let message = JSON.stringify(Array.from(bucket.entries()));
-   message.match(/\"/);
-   console.log(message);
+   //Переводим мапу в строку для вставки в запрос и экранируем кавычки в сообщении
+   let message = JSON.stringify(Array.from(bucket.entries())).replace(/\"/g, "\\\"");
+   
+   //Создаём запрос
     let url = 'https://api.telegram.org/bot5558689984:AAHktTbnkTXsBAdPX59CuBeqYC1gkmUC2pE/answerWebAppQuery?web_app_query_id=' + 
                 tg.initDataUnsafe.query_id + '&result={"type":"article","id":' + cost + ',"title":"test","message_text":"' + 
                  message + '"}'
     console.log(url);
+    //Отправляем данные в бота
     fetchAsync(url);
  }
 
