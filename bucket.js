@@ -35,25 +35,25 @@ function setBill(name, amount) {
    priceOneProduct.innerText = "$" + price;
 }
 
+
+mainCost = new Intl.NumberFormat("en", {style: "currency", currency: "USD", maximumFractionDigits: 2}).format(cost);
 bucket.set("orderPrice", cost);
-console.log(cost);
-tg.MainButton.setText("Pay $" + cost); //Вставляем техт в кнопку
+console.log(mainCost);
+tg.MainButton.setText("Pay " + mainCost); //Вставляем техт в кнопку
 tg.MainButton.show(); //Показываем кнопку
 
 //Отправляем данные о выбранном товаре
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
-    tg.sendData("some string that we need to send");
-    console.log(tg.initDataUnsafe.query_id)
+   //  tg.sendData("some string that we need to send");
     let query_id = tg.initDataUnsafe.query_id
     answerWebAppQuery(tg.initDataUnsafe.query_id);
  });
  
  async function answerWebAppQuery(query_id) {
-    console.log(query_id)
-    console.log(tg.initDataUnsafe.query_id)
+   let message = JSON.stringify(Array.from(bucket.entries()));
     let url = 'https://api.telegram.org/bot5558689984:AAHktTbnkTXsBAdPX59CuBeqYC1gkmUC2pE/answerWebAppQuery?web_app_query_id=' + 
                 tg.initDataUnsafe.query_id + '&result={"type":"article","id":' + cost + ',"title":"test","message_text":"' + 
-                JSON.stringify(Array.from(bucket.entries())) + '"}'
+                 message + '"}'
     fetchAsync(url);
  }
 
