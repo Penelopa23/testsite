@@ -25,8 +25,7 @@ function setBill(name, amount) {
    //Вставляем значение
    product.innerHTML = amount;
    //Достаём цену
-   let priceOneProduct = document.getElementById(name + "Price");
-   console.log(priceOneProduct.innerText);
+   let priceOneProduct = Number(document.getElementById(name + "Price"));
    //Умножаем стоимость одного товара на его количество
    let price = priceOneProduct.innerText * amount;
    cost += price;
