@@ -53,8 +53,7 @@ Telegram.WebApp.onEvent('mainButtonClicked', function(){
    
    //Создаём запрос
     let url = 'https://api.telegram.org/bot5558689984:AAHktTbnkTXsBAdPX59CuBeqYC1gkmUC2pE/answerWebAppQuery?web_app_query_id=' + 
-                tg.initDataUnsafe.query_id + '&result={"type":"article","id":' + cost + ',"title":"test","message_text":"' + 
-                 message + '"}'
+                tg.initDataUnsafe.query_id + '&result={"type":"article","id":' + cost + ',"title":"' + message + '","message_text":"You order is accepted"}'
     console.log(url);
     //Отправляем данные в бота
     fetchAsync(url);
