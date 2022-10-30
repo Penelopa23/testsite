@@ -6,7 +6,7 @@ tg.MainButton.textColor = "#FFFFFF"; //Меняем цвет текста кно
 tg.MainButton.color = "#2cab37"; //Меняем цвет самой кнопки на зеленый как в @DurgerKing она созда]теся телеграмом
 
 let cost = 0;
-let message = "Order summary: \n";
+let message = "Order summary: \\n";
 //Получить значение из localStorage
 bucket = new Map(JSON.parse(localStorage.myMap));
 
@@ -30,8 +30,8 @@ function setBill(name, amount) {
    //Умножаем стоимость одного товара на его количество
    let price = costOneProduct * amount;
    cost += price;
-
-   message += name + "x" + amount + " - " + price + "\n"; 
+   //Добавляем информацию о заказе в сообщение
+   message += name.firstLetterToUppercase() + " x" + amount + " - " + price + "\\n"; 
    //Вставляем стоимость товара
    priceOneProduct.innerText = "$" + price;
 }
@@ -61,9 +61,15 @@ Telegram.WebApp.onEvent('mainButtonClicked', function(){
     fetchAsync(url);
  }
 
+ //Метод отправкии сообщения боту
  async function fetchAsync (url) {
    fetch(url)
      .then(res => res.json())
      .then(json => console.log(json));
+}
+
+//Метод чтобы сделать первую букву в слове заглавной
+String.prototype.firstLetterToUppercase = function() {
+   return this[0].toUpperCase() + this.slice(1);
 }
  
