@@ -31,8 +31,7 @@ function setBill(name, amount) {
    let price = costOneProduct * amount;
    cost += price;
    //Добавляем информацию о заказе в сообщение
-   const nameForMessage = name;
-   message += nameForMessage.firstLetterToUppercase() + " x" + amount + " - " + price + "\\n"; 
+   message += firstLetterToUppercase(name) + " x" + amount + " - " + price + "\\n"; 
    //Вставляем стоимость товара
    priceOneProduct.innerText = "$" + price;
 }
@@ -70,7 +69,8 @@ Telegram.WebApp.onEvent('mainButtonClicked', function(){
 }
 
 //Метод чтобы сделать первую букву в слове заглавной
-String.prototype.firstLetterToUppercase = function() {
-   return this[0].toUpperCase() + this.slice(1);
+function firstLetterToUppercase(str) {
+   if (!str) return str;
+  return str[0].toUpperCase() + str.slice(1);
 }
  
