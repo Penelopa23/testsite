@@ -31,7 +31,8 @@ function setBill(name, amount) {
    let price = costOneProduct * amount;
    cost += price;
    //Добавляем информацию о заказе в сообщение
-   message += name.firstLetterToUppercase() + " x" + amount + " - " + price + "\\n"; 
+   const nameForMessage = name;
+   message += nameForMessage.firstLetterToUppercase() + " x" + amount + " - " + price + "\\n"; 
    //Вставляем стоимость товара
    priceOneProduct.innerText = "$" + price;
 }
