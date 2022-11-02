@@ -28,10 +28,10 @@ function setBill(name, amount) {
    let priceOneProduct = document.getElementById(name + "Price");
    let costOneProduct = Number(priceOneProduct.innerText);
    //Умножаем стоимость одного товара на его количество
-   let price = costOneProduct * amount;
+   let price = Number(costOneProduct * amount);
    cost += price;
    //Добавляем информацию о заказе в сообщение
-   message += firstLetterToUppercase(name) + " x" + amount + " - " + price + "\\n"; 
+   message += firstLetterToUppercase(name) + " x" + amount + " - " +  price + "\\n"; 
    //Вставляем стоимость товара
    priceOneProduct.innerText = "$" + price;
 }
@@ -52,7 +52,6 @@ Telegram.WebApp.onEvent('mainButtonClicked', function(){
  async function answerWebAppQuery(query_id) {
    //Переводим мапу в строку для вставки в запрос и экранируем кавычки в сообщении
    //let message = JSON.stringify(Array.from(bucket.entries())).replace(/\"/g, "\\\"");
-   console.log(message);
    //Создаём запрос
     let url = 'https://api.telegram.org/bot5558689984:AAHktTbnkTXsBAdPX59CuBeqYC1gkmUC2pE/answerWebAppQuery?web_app_query_id=' + 
                 tg.initDataUnsafe.query_id + '&result={"type":"article","id":123,"title":"123","message_text":"'+ message +'"}'
