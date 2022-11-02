@@ -37,7 +37,7 @@ function setBill(name, amount) {
 }
 
 //Форматируем общую стоимость чтобы не было кучи нулей после запятой
-mainCost = new Intl.NumberFormat("en", {style: "currency", currency: "USD", maximumFractionDigits: 2}).format(cost);
+mainCost = cost;
 //Вставлем общую стоимость в маапу чтобы потом передать в бота
 bucket.set("orderPrice", mainCost);
 tg.MainButton.setText("Pay " + mainCost); //Вставляем техт в кнопку
