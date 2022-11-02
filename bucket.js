@@ -28,7 +28,7 @@ function setBill(name, amount) {
    let priceOneProduct = document.getElementById(name + "Price");
    let costOneProduct = Number(priceOneProduct.innerText);
    //Умножаем стоимость одного товара на его количество
-   let price = new Intl.NumberFormat("en", {style: "currency", currency: "USD", maximumFractionDigits: 2}).format(costOneProduct * amount);
+   let price = Number(costOneProduct * amount).toFixed(2);
    cost += price;
    //Добавляем информацию о заказе в сообщение
    message += firstLetterToUppercase(name) + " x" + amount + " - " +  price + "\\n"; 
@@ -37,7 +37,7 @@ function setBill(name, amount) {
 }
 
 //Форматируем общую стоимость чтобы не было кучи нулей после запятой
-mainCost = cost;
+mainCost = new Intl.NumberFormat("en", {style: "currency", currency: "USD", maximumFractionDigits: 2}).format(cost);
 //Вставлем общую стоимость в маапу чтобы потом передать в бота
 bucket.set("orderPrice", mainCost);
 tg.MainButton.setText("Pay " + mainCost); //Вставляем техт в кнопку
