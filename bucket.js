@@ -27,9 +27,9 @@ function setBill(name, amount) {
    //Достаём цену
    let priceOneProduct = document.getElementById(name + "Price");
    let costOneProduct = Number(priceOneProduct.innerText);
-   //Умножаем стоимость одного товара на его количество
+   //Умножаем стоимость одного товара на его количество и оставляем только 2 цифры после запятой
    let price = Number(costOneProduct * amount).toFixed(2);
-   cost += price;
+   cost += costOneProduct * amount;
    //Добавляем информацию о заказе в сообщение
    message += firstLetterToUppercase(name) + " x" + amount + " - " +  price + "\\n"; 
    //Вставляем стоимость товара
