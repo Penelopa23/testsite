@@ -31,7 +31,7 @@ function setBill(name, amount) {
    let price = Number(costOneProduct * amount).toFixed(2);
    cost += costOneProduct * amount;
    //Добавляем информацию о заказе в сообщение
-   message += firstLetterToUppercase(name) + " x" + amount + " - " +  price + "\\n"; 
+   message += firstLetterToUppercase(name) + " x" + amount + " - " + "$" + price + "\\n"; 
    //Вставляем стоимость товара
    priceOneProduct.innerText = "$" + price;
 }
