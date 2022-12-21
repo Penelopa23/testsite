@@ -1,285 +1,55 @@
-<html class="dark" style="--tg-color-scheme:dark; --tg-theme-bg-color:#212121; --tg-theme-text-color:#ffffff; --tg-theme-hint-color:#aaaaaa; --tg-theme-link-color:#8774e1; --tg-theme-button-color:#8774e1; --tg-theme-button-text-color:#ffffff; --tg-theme-secondary-bg-color:#0f0f0f; --tg-viewport-height:100vh; --tg-viewport-stable-height:100vh;"><head>
-    <meta charset="utf-8">
-    <title>TemplateWebAppBot</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, viewport-fit=cover">
-    <meta name="format-detection" content="telephone=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="MobileOptimized" content="176">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="robots" content="noindex, nofollow">
-    <script src="https://tg.dev/js/telegram-web-app.js?25"></script>
-    <script>
-      function setThemeClass() {
-        document.documentElement.className = Telegram.WebApp.colorScheme;
-      }
-      Telegram.WebApp.onEvent('themeChanged', setThemeClass);
-      setThemeClass();
-    </script>
-    <link href="cafe.css" rel="stylesheet">
+<!DOCTYPE html>
+<html class="dark" style="--tg-color-scheme:dark; 
+--tg-theme-bg-color:#212121; 
+--tg-theme-text-color:#ffffff; 
+--tg-theme-hint-color:#aaaaaa; 
+--tg-theme-link-color:#8774e1; 
+--tg-theme-button-color:#8774e1; 
+--tg-theme-button-text-color:#ffffff; 
+--tg-theme-secondary-bg-color:#0f0f0f; 
+--tg-viewport-height:100vh; --tg-viewport-stable-height:100vh;">
+<head>
+	<meta charset="UTF-8">
+  <title>TemplateWebAppBot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, viewport-fit=cover">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="MobileOptimized" content="176">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="robots" content="noindex, nofollow">
+  <script>
+    function setThemeClass() {
+      document.documentElement.className = Telegram.WebApp.colorScheme;
+    }
+    Telegram.WebApp.onEvent('themeChanged', setThemeClass);
+    setThemeClass();
+  </script>
+	<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="arrowUp.css">
+	<link rel="stylesheet" href="arrowDown.css">
 
-  </head>
-  
-  <body style>
-    <section class="cafe-page cafe-items">
-    <div class="cafe-item js-item" data-item-id="1" data-item-price="4990" id="burgerButtons">
-    <div class="cafe-item-counter js-item-counter" id="1">0</div>
-    <div class="cafe-item-photo">
-            <picture class="cafe-item-lottie">
-              <img srcset="./img/cafe/Burger.gif">
-        
-      <canvas width="148" height="148"></canvas></picture>
-    </div>
-    <div class="cafe-item-label">
-      <span class="cafe-item-title">Burger</span>
-      <span class="cafe-item-price">$4.99</span>
-    </div>
-    <div class="cafe-item-buttons">
-      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler" id="burgerMinus">
-        <span class="ripple-mask"><span class="ripple"></span></span>
-      </button>
-      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler" id="burgerPlus">
-        <span class="button-item-label">Add</span>
-        <span class="ripple-mask"><span class="ripple"></span></span>
-      </button>
-    </div>
-  </div>  <div class="cafe-item js-item" data-item-id="2" data-item-price="1490" id="friesButtons">
-    <div class="cafe-item-counter js-item-counter" id="2">0</div>
-    <div class="cafe-item-photo">
-            <picture class="cafe-item-lottie js-item-lottie">
-        <img srcset="./img/cafe/Fries.gif">
-        
-      <canvas width="148" height="148"></canvas></picture>
-    </div>
-    <div class="cafe-item-label">
-      <span class="cafe-item-title">Fries</span>
-      <span class="cafe-item-price">$1.49</span>
-    </div>
-    <div class="cafe-item-buttons">
-      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler" id="friesMinus">
-        <span class="ripple-mask"><span class="ripple"></span></span>
-      </button>
-      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler" id="friesPlus">
-        <span class="button-item-label">Add</span>
-        <span class="ripple-mask"><span class="ripple"></span></span>
-      </button>
-    </div>
-  </div>  <div class="cafe-item js-item" data-item-id="3" data-item-price="3490" id="hotdogButtons">
-    <div class="cafe-item-counter js-item-counter" id="3">0</div>
-    <div class="cafe-item-photo">
-            <picture class="cafe-item-lottie js-item-lottie">
-        <img srcset="./img/cafe/Hotdog.gif">
-        
-      <canvas width="148" height="148"></canvas></picture>
-    </div>
-    <div class="cafe-item-label">
-      <span class="cafe-item-title">Hotdog</span>
-      <span class="cafe-item-price">$3.49</span>
-    </div>
-    <div class="cafe-item-buttons">
-      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler" id="hotdogMinus">
-        <span class="ripple-mask"><span class="ripple"></span></span>
-      </button>
-      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler" id="hotdogPlus">
-        <span class="button-item-label">Add</span>
-        <span class="ripple-mask"><span class="ripple"></span></span>
-      </button>
-    </div>
-  </div>  <div class="cafe-item js-item" data-item-id="4" data-item-price="3990" id="takoButtons">
-    <div class="cafe-item-counter js-item-counter" id="4">0</div>
-    <div class="cafe-item-photo">
-            <picture class="cafe-item-lottie js-item-lottie">
-        <img srcset="./img/cafe/Tako.gif">
-        
-      <canvas width="148" height="148"></canvas></picture>
-    </div>
-    <div class="cafe-item-label">
-      <span class="cafe-item-title">Tako</span>
-      <span class="cafe-item-price">$3.99</span>
-    </div>
-    <div class="cafe-item-buttons">
-      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler" id="takoMinus">
-        <span class="ripple-mask"><span class="ripple"></span></span>
-      </button>
-      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler" id="takoPlus">
-        <span class="button-item-label">Add</span>
-        <span class="ripple-mask"><span class="ripple"></span></span>
-      </button>
-    </div>
-  </div>  <div class="cafe-item js-item" data-item-id="5" data-item-price="7990" id="pizzaButtons">
-    <div class="cafe-item-counter js-item-counter" id="5">0</div>
-    <div class="cafe-item-photo">
-            <picture class="cafe-item-lottie js-item-lottie">
-        <img srcset="./img/cafe/Pizza.gif">
-        
-      <canvas width="148" height="148"></canvas></picture>
-    </div>
-    <div class="cafe-item-label">
-      <span class="cafe-item-title">Pizza</span>
-      <span class="cafe-item-price">$7.99</span>
-    </div>
-    <div class="cafe-item-buttons">
-      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler" id="pizzaMinus">
-        <span class="ripple-mask"><span class="ripple"></span></span>
-      </button>
-      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler" id="pizzaPlus">
-        <span class="button-item-label">Add</span>
-        <span class="ripple-mask"><span class="ripple"></span></span>
-      </button>
-    </div>
-  </div>  <div class="cafe-item js-item" data-item-id="6" data-item-price="1490" id="donutButtons">
-    <div class="cafe-item-counter js-item-counter" id="6">0</div>
-    <div class="cafe-item-photo">
-            <picture class="cafe-item-lottie js-item-lottie">
-        <img srcset="./img/cafe/Donut.gif">
-        
-      <canvas width="148" height="148"></canvas></picture>
-    </div>
-    <div class="cafe-item-label">
-      <span class="cafe-item-title">Donut</span>
-      <span class="cafe-item-price">$1.49</span>
-    </div>
-    <div class="cafe-item-buttons">
-      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler" id="donutMinus">
-        <span class="ripple-mask"><span class="ripple"></span></span>
-      </button>
-      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler" id="donutPlus">
-        <span class="button-item-label">Add</span>
-        <span class="ripple-mask"><span class="ripple"></span></span>
-      </button>
-    </div>
-  </div>  <div class="cafe-item js-item" data-item-id="7" data-item-price="1990" id="popcornButtons">
-    <div class="cafe-item-counter js-item-counter" id="7">0</div>
-    <div class="cafe-item-photo">
-            <picture class="cafe-item-lottie js-item-lottie">
-        <img srcset="./img/cafe/Popcorn.gif">
-        
-      <canvas width="148" height="148"></canvas></picture>
-    </div>
-    <div class="cafe-item-label">
-      <span class="cafe-item-title">Popcorn</span>
-      <span class="cafe-item-price">$1.99</span>
-    </div>
-    <div class="cafe-item-buttons">
-      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler" id="popcornMinus">
-        <span class="ripple-mask"><span class="ripple"></span></span>
-      </button>
-      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler" id="popcornPlus">
-        <span class="button-item-label">Add</span>
-        <span class="ripple-mask"><span class="ripple"></span></span>
-      </button>
-    </div>
-  </div>  <div class="cafe-item js-item" data-item-id="8" data-item-price="1490" id="cokeButtons">
-    <div class="cafe-item-counter js-item-counter" id="8">0</div>
-    <div class="cafe-item-photo">
-            <picture class="cafe-item-lottie js-item-lottie">
-        <img srcset="./img/cafe/Coke.gif">
-        
-      <canvas width="148" height="148"></canvas></picture>
-    </div>
-    <div class="cafe-item-label">
-      <span class="cafe-item-title">Coke</span>
-      <span class="cafe-item-price">$1.49</span>
-    </div>
-    <div class="cafe-item-buttons">
-      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler" id="cokeMinus">
-        <span class="ripple-mask"><span class="ripple"></span></span>
-      </button>
-      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler" id="cokePlus">
-        <span class="button-item-label">Add</span>
-        <span class="ripple-mask"><span class="ripple"></span></span>
-      </button>
-    </div>
-  </div>  <div class="cafe-item js-item" data-item-id="9" data-item-price="10990" id="cakeButtons">
-    <div class="cafe-item-counter js-item-counter" id="9">0</div>
-    <div class="cafe-item-photo">
-            <picture class="cafe-item-lottie js-item-lottie">
-        <img srcset="./img/cafe/Cake.gif">
-        
-      <canvas width="148" height="148"></canvas></picture>
-    </div>
-    <div class="cafe-item-label">
-      <span class="cafe-item-title">Cake</span>
-      <span class="cafe-item-price">$10.99</span>
-    </div>
-    <div class="cafe-item-buttons">
-      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler" id="cakeMinus">
-        <span class="ripple-mask"><span class="ripple"></span></span>
-      </button>
-      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler" id="cakePlus">
-        <span class="button-item-label">Add</span>
-        <span class="ripple-mask"><span class="ripple"></span></span>
-      </button>
-    </div>
-  </div>  <div class="cafe-item js-item" data-item-id="10" data-item-price="5990" id="icecreamButtons">
-    <div class="cafe-item-counter js-item-counter" id="10">0</div>
-    <div class="cafe-item-photo">
-            <picture class="cafe-item-lottie js-item-lottie">
-        <img srcset="./img/cafe/Icecream.gif">
-        
-      <canvas width="148" height="148"></canvas></picture>
-    </div>
-    <div class="cafe-item-label">
-      <span class="cafe-item-title">Icecream</span>
-      <span class="cafe-item-price">$5.99</span>
-    </div>
-    <div class="cafe-item-buttons">
-      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler" id="icecreamMinus">
-        <span class="ripple-mask"><span class="ripple"></span></span>
-      </button>
-      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler" id="icecreamPlus">
-        <span class="button-item-label">Add</span>
-        <span class="ripple-mask"><span class="ripple"></span></span>
-      </button>
-    </div>
-  </div>  <div class="cafe-item js-item" data-item-id="11" data-item-price="3990" id="cookieButtons">
-    <div class="cafe-item-counter js-item-counter" id="11">0</div>
-    <div class="cafe-item-photo">
-            <picture class="cafe-item-lottie js-item-lottie">
-        <img srcset="./img/cafe/Cookie.gif">
-        
-      <canvas width="148" height="148"></canvas></picture>
-    </div>
-    <div class="cafe-item-label">
-      <span class="cafe-item-title">Cookie</span>
-      <span class="cafe-item-price">$3.99</span>
-    </div>
-    <div class="cafe-item-buttons">
-      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler" id="cookieMinus">
-        <span class="ripple-mask"><span class="ripple"></span></span>
-      </button>
-      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler" id="cookiePlus">
-        <span class="button-item-label">Add</span>
-        <span class="ripple-mask"><span class="ripple"></span></span>
-      </button>
-    </div>
-  </div>  <div class="cafe-item js-item" data-item-id="12" data-item-price="7990" id="flanButtons">
-    <div class="cafe-item-counter js-item-counter" id="12">0</div>
-    <div class="cafe-item-photo">
-            <picture class="cafe-item-lottie js-item-lottie">
-        <img srcset="./img/cafe/Flan.gif">
-        
-      <canvas width="148" height="148"></canvas></picture>
-    </div>
-    <div class="cafe-item-label">
-      <span class="cafe-item-title">Flan</span>
-      <span class="cafe-item-price">$7.99</span>
-    </div>
-    <div class="cafe-item-buttons">
-      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler" id="flanMinus">
-        <span class="ripple-mask"><span class="ripple"></span></span>
-      </button>
-      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler" id="flanPlus">
-        <span class="button-item-label">Add</span>
-        <span class="ripple-mask"><span class="ripple"></span></span>
-      </button>
-    </div>
-  </div><div class="cafe-item-shadow"></div><div class="cafe-item-shadow"></div><div class="cafe-item-shadow"></div><div class="cafe-item-shadow"></div>
-</section>
-
-    <!-- <script src="https://tg.dev/js/jquery.min.js"></script> -->
-    <!-- <script src="https://tg.dev/js/tgsticker.js?29"></script> -->
-    <script src="https://webappcontent.telegram.org/js/pako-inflate.min.js"></script>
-    <script src="cafetest.js"></script>
-    <!-- <script>Cafe.init({"https://web.telegram.org/z/#5104055776":"\/cafe\/api","userId":0,"userHash":null});</script> -->
+	<title>Document</title>
+</head>
+<body>
+	<div class="btn-group">
+        <a href="" class="floating-button-up">
+          <div class="arrow-1">
+              <div></div>
+          </div>
+          SEND
+        </a>
+        <a href="" class="floating-button-down">
+          <div class="arrow-2">
+            <div></div>
+          </div>
+          RECEIVE
+        </a>
+				<!-- <button class="floating-button"><img src="UpArrow.png" alt="send" class="btn" id="btn1"></button>
+			  <button><img src="DownArrow.png" alt="receive" class="btn" id="btn2"></button> -->
+	</div>
+	<div class="usercard" id="usercard"></div>
+	<script src="https://telegram.org/js/telegram-web-app.js"></script>
+	<script src="app.ts"></script>
 </body>
 </html>
