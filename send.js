@@ -13,19 +13,11 @@ tg.MainButton.show() // показать кнопку
 // tg.MainButton.disable() // сделать неактивной 
 console.log(tg.initDataUnsafe)
 
-console.log(tg.initDataUnsafe.user)
+// console.log(tg.initDataUnsafe.user)
 tg.MainButton.show(); //Показываем кнопку
-if(tg.initDataUnsafe.user.id === 179755741) {
+
     tg.MainButton.enable() // сделать активной 
-}else {
-    tg.MainButton.disable()
-}
-console.log(tg.initDataUnsafe.user.id) // уникальный идентификатор пользователя
-console.log(tg.initDataUnsafe.user.isBot) // бот ли пользователь (true/false)
-console.log(tg.initDataUnsafe.user.first_name) // имя пользователя
-console.log(tg.initDataUnsafe.user.last_name) // "фамилия" пользователя
-console.log(tg.initDataUnsafe.user.username) // username пользователя
-console.log(tg.initDataUnsafe.user.language_code) // код языка пользователя
+
 
 //Отправляем данные о выбранном товаре
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
