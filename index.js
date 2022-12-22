@@ -18,21 +18,21 @@ tg.MainButton.textColor // цвет подложки
 tg.MainButton.isVisible // видна ли кнопка (по умолчанию false) 
 console.log(tg.MainButton.isActive); // активна ли кнопка (по умолчанию true)
 // tg.MainButton.setText(text) //  метод для задания текста
-tg.MainButton.onClick(callback) // метод при нажатии на кнопку
+//tg.MainButton.onClick(callback) // метод при нажатии на кнопку
 tg.MainButton.show() // показать кнопку 
 // tg.MainButton.hide() // скрыть кнопку
 tg.MainButton.enable() // сделать активной 
 // tg.MainButton.disable() // сделать неактивной 
-tg.MainButton.setParams(params) // задает параметры в виде объекта 
+//tg.MainButton.setParams(params) // задает параметры в виде объекта 
 tg.MainButton.setText("Pay "); //Вставляем техт в кнопку
 tg.MainButton.show(); //Показываем кнопку
 
-tg.initDataUnsafe.user.id // уникальный идентификатор пользователя
-tg.initDataUnsafe.user.isBot // бот ли пользователь (true/false)
-tg.initDataUnsafe.user.first_name // имя пользователя
-tg.initDataUnsafe.user.last_name // "фамилия" пользователя
-tg.initDataUnsafe.user.username // username пользователя
-tg.initDataUnsafe.user.language_code // код языка пользователя
+console.log(tg.initDataUnsafe.user.id); // уникальный идентификатор пользователя
+console.log(tg.initDataUnsafe.user.isBot); // бот ли пользователь (true/false)
+console.log(tg.initDataUnsafe.user.first_name); // имя пользователя
+console.log(tg.initDataUnsafe.user.last_name); // "фамилия" пользователя
+console.log(tg.initDataUnsafe.user.username); // username пользователя
+console.log(tg.initDataUnsafe.user.language_code); // код языка пользователя
 
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
 	tg.sendData("some string that we need to send"); 
