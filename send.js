@@ -11,7 +11,7 @@ tg.MainButton.setText("SEND") //  метод для задания текста
 tg.MainButton.show() // показать кнопку 
 // tg.MainButton.hide() // скрыть кнопку
 // tg.MainButton.disable() // сделать неактивной 
-
+console.log(tg.initDataUnsafe.user)
 tg.MainButton.show(); //Показываем кнопку
 if(tg.initDataUnsafe.user.id === 179755741) {
     tg.MainButton.enable() // сделать активной 
