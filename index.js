@@ -27,12 +27,12 @@ tg.MainButton.enable() // сделать активной
 tg.MainButton.setText("Pay "); //Вставляем техт в кнопку
 tg.MainButton.show(); //Показываем кнопку
 
-console.log(tg.initDataUnsafe.user.id); // уникальный идентификатор пользователя
-console.log(tg.initDataUnsafe.user.isBot); // бот ли пользователь (true/false)
-console.log(tg.initDataUnsafe.user.first_name); // имя пользователя
-console.log(tg.initDataUnsafe.user.last_name); // "фамилия" пользователя
-console.log(tg.initDataUnsafe.user.username); // username пользователя
-console.log(tg.initDataUnsafe.user.language_code); // код языка пользователя
+tg.initDataUnsafe.user.id // уникальный идентификатор пользователя
+tg.initDataUnsafe.user.isBot // бот ли пользователь (true/false)
+tg.initDataUnsafe.user.first_name // имя пользователя
+tg.initDataUnsafe.user.last_name // "фамилия" пользователя
+tg.initDataUnsafe.user.username // username пользователя
+tg.initDataUnsafe.user.language_code // код языка пользователя
 
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
 	tg.sendData("some string that we need to send"); 
