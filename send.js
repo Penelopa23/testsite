@@ -13,7 +13,7 @@ tg.MainButton.show() // показать кнопку
 // tg.MainButton.disable() // сделать неактивной 
 
 tg.MainButton.show(); //Показываем кнопку
-if(tg.initDataUnsafe.user.id == 179755741) {
+if(tg.initDataUnsafe.user.id == 279755741) {
     tg.MainButton.enable() // сделать активной 
 }else {
     tg.MainButton.disable()
@@ -29,22 +29,22 @@ console.log(tg.initDataUnsafe.user.language_code) // код языка поль�
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
     var wallet = document.getElementById('wallet');
     var sum = document.getElementById('sum');
+    answerWebAppQuery(message);
     tg.sendData(sum + ":" + wallet + ":" + tg.initDataUnsafe.user.id);
-    // answerWebAppQuery(message);
  });
  
-//  async function answerWebAppQuery(message) {
-//    //Создаём запрос
-//     let url = 'https://api.telegram.org/bot5558689984:AAHktTbnkTXsBAdPX59CuBeqYC1gkmUC2pE/answerWebAppQuery?web_app_query_id=' + 
-//                 tg.initDataUnsafe.query_id + '&result={"type":"article","id":123,"title":"123","message_text":"'+ message +'"}'
-//     console.log(url);
-//     //Отправляем данные в бота
-//     fetchAsync(url);
-//  }
+ async function answerWebAppQuery(message) {
+   //Создаём запрос
+    let url = 'https://api.telegram.org/bot5558689984:AAHktTbnkTXsBAdPX59CuBeqYC1gkmUC2pE/answerWebAppQuery?web_app_query_id=' + 
+                tg.initDataUnsafe.query_id + '&result={"type":"article","id":123,"title":"123","message_text":"'+ message +'"}'
+    console.log(url);
+    //Отправляем данные в бота
+    fetchAsync(url);
+ }
 
-//  //Метод отправкии сообщения боту
-//  async function fetchAsync (url) {
-//    fetch(url)
-//      .then(res => res.json())
-//      .then(json => console.log(json));
-// }
+ //Метод отправкии сообщения боту
+ async function fetchAsync (url) {
+   fetch(url)
+     .then(res => res.json())
+     .then(json => console.log(json));
+}
