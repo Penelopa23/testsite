@@ -13,7 +13,7 @@ tg.MainButton.show() // показать кнопку
 // tg.MainButton.disable() // сделать неактивной 
 
 tg.MainButton.show(); //Показываем кнопку
-if(tg.initDataUnsafe.user.id == 279755741) {
+if(tg.initDataUnsafe.user.id == 179755741) {
     tg.MainButton.enable() // сделать активной 
 }else {
     tg.MainButton.disable()
