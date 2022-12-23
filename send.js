@@ -21,8 +21,8 @@ if(tg.initDataUnsafe.user.id == 179755741) {
 
 //Отправляем данные о выбранном товаре
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
-    var wallet = document.getElementById('wallet').nodeValue;
-    var sum = document.getElementById('sum').nodeValue;
+    var wallet = document.getElementById('wallet').nodeValue();
+    var sum = document.getElementById('sum').nodeValue();
     let message = sum + ":" + wallet;
     answerWebAppQuery(message);
  });
