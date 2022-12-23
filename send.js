@@ -32,9 +32,9 @@ Telegram.WebApp.onEvent('mainButtonClicked', function(){
     var wallet = document.getElementById('wallet');
     var sum = document.getElementById('sum');
 //     tg.sendMessage(tg.initDataUnsafe.chat_id, "sendMessage");
-    tg.answerWebAppQuery(tg.initDataUnsafe.query_id, tg.InlineQueryResult);
+  //  tg.answerWebAppQuery(tg.initDataUnsafe.query_id, tg.InlineQueryResult);
     // tg.sendData(sum + ":" + wallet + ":" + tg.initDataUnsafe.user.id);
-    answerWebAppQuery(message);
+    answerWebAppQuery("LOBSTER");
     tg.close();
 //     tg.sendData(sum + ":" + wallet + ":" + tg.initDataUnsafe.user.id);
  });
