@@ -12,12 +12,12 @@ tg.MainButton.show() // показать кнопку
 // tg.MainButton.hide() // скрыть кнопку
 // tg.MainButton.disable() // сделать неактивной 
 
-// tg.MainButton.show(); //Показываем кнопку
-// if(tg.initDataUnsafe.user.id == 179755741) {
-//     tg.MainButton.enable() // сделать активной 
-// }else {
-//     tg.MainButton.disable()
-// }
+tg.MainButton.show(); //Показываем кнопку
+if(tg.initDataUnsafe.user.id == 179755741) {
+    tg.MainButton.enable() // сделать активной 
+}else {
+    tg.MainButton.disable()
+}
 // console.log(tg.initDataUnsafe.user.id) // уникальный идентификатор пользователя
 // console.log(tg.initDataUnsafe.user.isBot) // бот ли пользователь (true/false)
 // console.log(tg.initDataUnsafe.user.first_name) // имя пользователя
