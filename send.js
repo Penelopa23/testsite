@@ -28,7 +28,6 @@ Telegram.WebApp.onEvent('mainButtonClicked', function(){
  });
  
  
- async function answerWebAppQuery(message) {
   async function answerWebAppQuery(message) {
    //Создаём запрос
     // let url = 'https://api.telegram.org/bot5558689984:AAHktTbnkTXsBAdPX59CuBeqYC1gkmUC2pE/answerWebAppQuery?web_app_query_id=' + 
