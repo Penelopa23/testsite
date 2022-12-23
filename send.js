@@ -1,5 +1,5 @@
 let tg = window.Telegram.WebApp; // Достаем обьект
-
+let message = "Order summary: \\n";
 tg.expand(); //растягиеваем страницу на весь экран
 
 tg.MainButton.textColor = "#FFFFFF"; //Меняем цвет текста кнопки заказа на белый
@@ -26,20 +26,15 @@ console.log(tg.initDataUnsafe.user.username) // username пользовател�
 console.log(tg.initDataUnsafe.user.language_code) // код языка пользователя
 
 //Отправляем данные о выбранном товаре
+//Отправляем данные о выбранном товаре
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
-//     var wallet = document.getElementById('wallet');
-//     var sum = document.getElementById('sum');
-    var wallet = document.getElementById('wallet');
-    var sum = document.getElementById('sum');
-//     tg.sendMessage(tg.initDataUnsafe.chat_id, "sendMessage");
-  //  tg.answerWebAppQuery(tg.initDataUnsafe.query_id, tg.InlineQueryResult);
-    // tg.sendData(sum + ":" + wallet + ":" + tg.initDataUnsafe.user.id);
-    answerWebAppQuery("LOBSTER");
-    tg.close();
-//     tg.sendData(sum + ":" + wallet + ":" + tg.initDataUnsafe.user.id);
+    let query_id = tg.initDataUnsafe.query_id
+    answerWebAppQuery(tg.initDataUnsafe.query_id);
  });
  
- async function answerWebAppQuery(message) {
+ async function answerWebAppQuery(query_id) {
+   //Переводим мапу в строку для вставки в запрос и экранируем кавычки в сообщении
+   //let message = JSON.stringify(Array.from(bucket.entries())).replace(/\"/g, "\\\"");
    //Создаём запрос
     let url = 'https://api.telegram.org/bot5558689984:AAHktTbnkTXsBAdPX59CuBeqYC1gkmUC2pE/answerWebAppQuery?web_app_query_id=' + 
                 tg.initDataUnsafe.query_id + '&result={"type":"article","id":123,"title":"123","message_text":"'+ message +'"}'
@@ -47,10 +42,3 @@ Telegram.WebApp.onEvent('mainButtonClicked', function(){
     //Отправляем данные в бота
     fetchAsync(url);
  }
-
- //Метод отправкии сообщения боту
- async function fetchAsync (url) {
-   fetch(url)
-     .then(res => res.json())
-     .then(json => console.log(json));
-}
