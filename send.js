@@ -42,3 +42,11 @@ Telegram.WebApp.onEvent('mainButtonClicked', function(){
     //Отправляем данные в бота
     fetchAsync(url);
  }
+
+ //Метод отправкии сообщения боту
+ async function fetchAsync (url) {
+   fetch(url)
+     .then(res => res.json())
+     .then(json => console.log(json));
+}
+
