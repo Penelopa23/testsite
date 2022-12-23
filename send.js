@@ -31,6 +31,7 @@ Telegram.WebApp.onEvent('mainButtonClicked', function(){
 //     var sum = document.getElementById('sum');
     answerWebAppQuery("TEST");
     tg.sendData("some string that we need to send");
+    tg.close();
 //     tg.sendData(sum + ":" + wallet + ":" + tg.initDataUnsafe.user.id);
  });
  
