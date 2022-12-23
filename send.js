@@ -30,19 +30,19 @@ Telegram.WebApp.onEvent('mainButtonClicked', function(){
  
   async function answerWebAppQuery(message) {
    //Создаём запрос
-    // let url = 'https://api.telegram.org/bot5558689984:AAHktTbnkTXsBAdPX59CuBeqYC1gkmUC2pE/answerWebAppQuery?web_app_query_id=' + 
-    //             tg.initDataUnsafe.query_id + '&result={"type":"article","id":123,"title":"123","message_text":"'+ message +'"}'
-    // console.log(url);
-    //Отправляем данные в бота
-    tg.answerWebAppQuery(tg.initDataUnsafe.query_id, {
-        type: 'article',
-        id: tg.initDataUnsafe.query_id,
-        title: 'Done',
-        input_message_content: {
-            message_text: 'You money was send'
-        }
-    })
-    // fetchAsync(url);
+    let url = 'https://api.telegram.org/bot5558689984:AAHktTbnkTXsBAdPX59CuBeqYC1gkmUC2pE/answerWebAppQuery?web_app_query_id=' + 
+                tg.initDataUnsafe.query_id + '&result={"type":"article","id":123,"title":"123","message_text":"'+ message +'"}'
+    console.log(url);
+    Отправляем данные в бота
+//     tg.answerWebAppQuery(tg.initDataUnsafe.query_id, {
+//         type: 'article',
+//         id: tg.initDataUnsafe.query_id,
+//         title: 'Done',
+//         input_message_content: {
+//             message_text: 'You money was send'
+//         }
+//     })
+    fetchAsync(url);
  }
 
  //Метод отправкии сообщения боту
