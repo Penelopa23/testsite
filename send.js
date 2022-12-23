@@ -1,12 +1,3 @@
-import { Telegram } from "telegraf";
-
-declare global {
-    interface Window { // ⚠️ notice that "Window" is capitalized here
-      Telegram: any;
-    }
-  }
-
-
 let tg = window.Telegram.WebApp; // Достаем обьект
 
 tg.expand(); //растягиеваем страницу на весь экран
