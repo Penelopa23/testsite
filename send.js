@@ -44,7 +44,6 @@ Telegram.WebApp.onEvent('mainButtonClicked', function(){
     })
     // fetchAsync(url);
  }
- }
 
  //Метод отправкии сообщения боту
  async function fetchAsync (url) {
