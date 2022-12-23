@@ -31,8 +31,7 @@ Telegram.WebApp.onEvent('mainButtonClicked', function(){
   async function answerWebAppQuery(message) {
    //Создаём запрос
     let url = 'https://api.telegram.org/bot5558689984:AAHktTbnkTXsBAdPX59CuBeqYC1gkmUC2pE/answerWebAppQuery?web_app_query_id=' + 
-    tg.initDataUnsafe.query_id + '&result={"type":"article","id":' + tg.initDataUnsafe.query_id + ',"title":"123","message_text":"' +
-    message +'"}'
+                tg.initDataUnsafe.query_id + '&result={"type":"article","id":123,"title":"123","message_text":"'+ message +'"}'
     console.log(url);
 //     Отправляем данные в бота
 //     tg.answerWebAppQuery(tg.initDataUnsafe.query_id, {
