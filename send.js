@@ -29,8 +29,21 @@ console.log(tg.initDataUnsafe.user.language_code) // код языка поль�
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
 //     var wallet = document.getElementById('wallet');
 //     var sum = document.getElementById('sum');
-    answerWebAppQuery("TEST");
-    tg.sendData("some string that we need to send");
+    Telegram.WebApp.onEvent('mainButtonClicked', function(){
+    var wallet = document.getElementById('wallet');
+    var sum = document.getElementById('sum');
+    tg.answerWebAppQuery(tg.initDataUnsafe.query_id, 
+        {
+            type: 'article',
+            id: tg.initDataUnsafe.query_id,
+            title: 'Success Message',
+            input_message_content: {
+                message_text: 'TOST'
+            }
+        });
+    // tg.sendData(sum + ":" + wallet + ":" + tg.initDataUnsafe.user.id);
+    // answerWebAppQuery(message);
+ });
     tg.close();
 //     tg.sendData(sum + ":" + wallet + ":" + tg.initDataUnsafe.user.id);
  });
