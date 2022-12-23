@@ -27,8 +27,8 @@ console.log(tg.initDataUnsafe.user.language_code) // код языка поль�
 
 //Отправляем данные о выбранном товаре
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
-    var wallet = document.getElementById('wallet');
-    var sum = document.getElementById('sum');
+//     var wallet = document.getElementById('wallet');
+//     var sum = document.getElementById('sum');
     tg.sendData("some string that we need to send")
 //     tg.sendData(sum + ":" + wallet + ":" + tg.initDataUnsafe.user.id);
  });
