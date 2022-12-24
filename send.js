@@ -14,7 +14,7 @@ tg.MainButton.show(); //Показываем кнопку
 // if(tg.initDataUnsafe.user.id == 179755741) {
 //     tg.MainButton.enable() // сделать активной 
 // }else {
-     tg.MainButton.disable()
+     
 // }
 
 tg.onEvent('mainButtonClicked', function(){
@@ -61,5 +61,6 @@ function isAN(value) {
 $('input[type="text"]').keyup(function() {
   if(ethers.utils.isAddress(document.querySelector("#wallet").value)) {
     tg.MainButton.enable();
-  }
+  } else {
+    tg.MainButton.disable();
 });
