@@ -5,25 +5,23 @@ tg.expand(); //растягиеваем страницу на весь экра�
 tg.MainButton.textColor = "#FFFFFF"; //Меняем цвет текста кнопки заказа на белый
 tg.MainButton.color = "#2cab37"; //Меняем цвет самой кнопки на зеленый как в @DurgerKing она созда]теся телеграмом
 
-tg.MainButton.isVisible // видна ли кнопка (по умолчанию false) 
 tg.MainButton.setText("SEND") //  метод для задания текста
 //tg.MainButton.onClick(callback) // метод при нажатии на кнопку
-tg.MainButton.show() // показать кнопку 
 // tg.MainButton.hide() // скрыть кнопку
 // tg.MainButton.disable() // сделать неактивной 
 
 tg.MainButton.show(); //Показываем кнопку
-if(tg.initDataUnsafe.user.id == 179755741) {
-    tg.MainButton.enable() // сделать активной 
-}else {
-    tg.MainButton.disable()
-}
+// if(tg.initDataUnsafe.user.id == 179755741) {
+//     tg.MainButton.enable() // сделать активной 
+// }else {
+//     tg.MainButton.disable()
+// }
 
 tg.onEvent('mainButtonClicked', function(){
     var wallet = document.querySelector("#wallet").value;
     var sum = document.querySelector("#sum").value;
       let message = "Try to send " + sum + " USDT to " + wallet;
-    if(validateForm(wallet) && checkNum(sum)) {
+    if(ethers.utils.isAddress(wallet) && checkNum(sum)) {
     let message = "Try to send " + sum + " USDT to " + wallet;
     answerWebAppQuery(message);
     }else{
@@ -59,3 +57,9 @@ function checkNum(num) {
 function isAN(value) {
   return  isFinite(value) && value === parseInt(value, 10);
 }
+
+$('input[type="text"]').keyup(function() {
+  if(ethers.utils.isAddress(document.querySelector("#wallet").value)) {
+    tg.MainButton.enable();
+  }
+});
