@@ -1,5 +1,5 @@
 // const { ethers } = require("ethers");
-import { ethers } from 'ethers'
+// import { ethers } from 'ethers'
 
 let tg = window.Telegram.WebApp; // Достаем обьект
 
