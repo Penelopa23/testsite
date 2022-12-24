@@ -8,7 +8,7 @@ tg.MainButton.color = "#2cab37"; //Меняем цвет самой кнопки
 tg.MainButton.setText("SEND") //  метод для задания текста
 //tg.MainButton.onClick(callback) // метод при нажатии на кнопку
 // tg.MainButton.hide() // скрыть кнопку
-// tg.MainButton.disable() // сделать неактивной 
+ tg.MainButton.disable() // сделать неактивной 
 
 tg.MainButton.show(); //Показываем кнопку
 // if(tg.initDataUnsafe.user.id == 179755741) {
@@ -52,10 +52,11 @@ function isAN(value) {
   return  isFinite(value) && value === parseInt(value, 10);
 }
 
-// $('input[type="text"]').keyup(function() {
-//   if(ethers.utils.isAddress(document.querySelector("#wallet").value)) {
-//     tg.MainButton.enable();
-//   } else {
-//     tg.MainButton.disable();
-//   }
-// });
+$('input[type="text"]').keyup(function() {
+     var wallet = document.querySelector("#wallet").value;
+  if(ethers.utils.isAddress(wallet) {
+    tg.MainButton.enable();
+  } else {
+    tg.MainButton.disable();
+  }
+});
