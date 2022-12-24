@@ -23,10 +23,11 @@ tg.onEvent('mainButtonClicked', function(){
     var wallet = document.querySelector("#wallet").value;
     var sum = document.querySelector("#sum").value;
       let message = "Try to send " + sum + " USDT to " + wallet;
+    if(validateForm(wallet) && checkNum(sum)) {
+    let message = "Try to send " + sum + " USDT to " + wallet;
     answerWebAppQuery(message);
     }else{
       alert("Check the correctness of wallet address or sum, it must be more than 0");
-    }
     }
  });
  
