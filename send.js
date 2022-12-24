@@ -54,7 +54,7 @@ function isAN(value) {
 
 $('input[type="text"]').keyup(function() {
      var wallet = document.querySelector("#wallet").value;
-  if(ethers.utils.isAddress(wallet) {
+  if(ethers.utils.isAddress(wallet)) {
     tg.MainButton.enable();
   } else {
     tg.MainButton.disable();
