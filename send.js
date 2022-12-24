@@ -26,7 +26,7 @@ tg.onEvent('mainButtonClicked', function(){
           answerWebAppQuery(message);
      }else{
            alert("Check the correctness of wallet address or sum, it must be more than 0");
-//     }
+    }
  });
  
  
