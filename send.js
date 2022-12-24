@@ -19,7 +19,6 @@ if(tg.initDataUnsafe.user.id == 179755741) {
     tg.MainButton.disable()
 }
 
-//Отправляем данные о выбранном товаре
 tg.onEvent('mainButtonClicked', function(){
     var wallet = document.querySelector("#wallet").value;
     var sum = document.querySelector("#sum").value;
