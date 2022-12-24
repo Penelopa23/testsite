@@ -1,6 +1,3 @@
-// const { ethers } = require("ethers");
-// import { ethers } from 'ethers'
-
 let tg = window.Telegram.WebApp; // Достаем обьект
 
 tg.expand(); //растягиеваем страницу на весь экран
@@ -26,7 +23,7 @@ tg.onEvent('mainButtonClicked', function(){
     var wallet = document.querySelector("#wallet").value;
     var sum = document.querySelector("#sum").value;
     validate(wallet);
-    let message = wallet + ":" + sum;
+    let message = "Try to send " + sum + " USDT to " + wallet;
     answerWebAppQuery(message);
  });
  
