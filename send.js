@@ -14,7 +14,7 @@ tg.MainButton.show(); //Показываем кнопку
 // if(tg.initDataUnsafe.user.id == 179755741) {
 //     tg.MainButton.enable() // сделать активной 
 // }else {
-//     tg.MainButton.disable()
+     tg.MainButton.disable()
 // }
 
 tg.onEvent('mainButtonClicked', function(){
