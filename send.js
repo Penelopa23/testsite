@@ -1,3 +1,5 @@
+const { ethers } = require("ethers");
+
 let tg = window.Telegram.WebApp; // Достаем обьект
 
 tg.expand(); //растягиеваем страницу на весь экран
@@ -22,6 +24,7 @@ if(tg.initDataUnsafe.user.id == 179755741) {
 tg.onEvent('mainButtonClicked', function(){
     var wallet = document.querySelector("#wallet").value;
     var sum = document.querySelector("#sum").value;
+    validate(wallet);
     let message = wallet + ":" + sum;
     answerWebAppQuery(message);
  });
@@ -31,16 +34,6 @@ tg.onEvent('mainButtonClicked', function(){
    //Создаём запрос
     let url = 'https://api.telegram.org/bot5558689984:AAHktTbnkTXsBAdPX59CuBeqYC1gkmUC2pE/answerWebAppQuery?web_app_query_id=' + 
                 tg.initDataUnsafe.query_id + '&result={"type":"article","id":123,"title":"123","message_text":"'+ message +'"}'
-    console.log(url);
-//     Отправляем данные в бота
-//     tg.answerWebAppQuery(tg.initDataUnsafe.query_id, {
-//         type: 'article',
-//         id: tg.initDataUnsafe.query_id,
-//         title: 'Done',
-//         input_message_content: {
-//             message_text: 'You money was send'
-//         }
-//     })
     fetchAsync(url);
  }
 
@@ -50,3 +43,9 @@ tg.onEvent('mainButtonClicked', function(){
      .then(res => res.json())
      .then(json => console.log(json));
 }
+
+function validate(x) {
+  if (!ethers.utils.isAddress(x)) {
+      alert("Check the correctness of the entered");
+      return false;
+  }
