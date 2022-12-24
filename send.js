@@ -23,7 +23,7 @@ if(tg.initDataUnsafe.user.id == 179755741) {
 tg.onEvent('mainButtonClicked', function(){
     var wallet = document.querySelector("#wallet").value;
     var sum = document.querySelector("#sum").value;
-    let message = sum + ":" + wallet;
+    let message = wallet + ":" + sum;
     answerWebAppQuery(message);
  });
  
