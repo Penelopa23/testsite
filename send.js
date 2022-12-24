@@ -63,4 +63,5 @@ $('input[type="text"]').keyup(function() {
     tg.MainButton.enable();
   } else {
     tg.MainButton.disable();
+  }
 });
