@@ -21,13 +21,13 @@ tg.onEvent('mainButtonClicked', function(){
     var wallet = document.querySelector("#wallet").value;
     var sum = document.querySelector("#sum").value;
       let message = "Try to send " + sum + " USDT to " + wallet;
-    if(checkNum(sum)) {
+//     if(checkNum(sum)) {
 //     let message = "Try to send " + sum + " USDT to " + wallet;
          let mmessage = ethers.utils.isAddress(document.querySelector("#wallet").value) + " " + document.querySelector("#sum").value; 
     answerWebAppQuery(message);
-    }else{
-      alert("Check the correctness of wallet address or sum, it must be more than 0");
-    }
+//     }else{
+//       alert("Check the correctness of wallet address or sum, it must be more than 0");
+//     }
  });
  
  
