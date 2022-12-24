@@ -23,7 +23,7 @@ tg.onEvent('mainButtonClicked', function(){
       let message = "Try to send " + sum + " USDT to " + wallet;
     if(checkNum(sum)) {
 //     let message = "Try to send " + sum + " USDT to " + wallet;
-         let mmessage = ethers.utils.isAddress(document.querySelector("#wallet").value) + " 12323"; 
+         let mmessage = ethers.utils.isAddress(document.querySelector("#wallet").value) + " " + document.querySelector("#sum").value; 
     answerWebAppQuery(message);
     }else{
       alert("Check the correctness of wallet address or sum, it must be more than 0");
