@@ -1,4 +1,4 @@
-const { ethers } = require("ethers");
+// const { ethers } = require("ethers");
 
 let tg = window.Telegram.WebApp; // Достаем обьект
 
@@ -24,7 +24,7 @@ if(tg.initDataUnsafe.user.id == 179755741) {
 tg.onEvent('mainButtonClicked', function(){
     var wallet = document.querySelector("#wallet").value;
     var sum = document.querySelector("#sum").value;
-    validate(wallet);
+//     validate(wallet);
     let message = wallet + ":" + sum;
     answerWebAppQuery(message);
  });
@@ -44,9 +44,9 @@ tg.onEvent('mainButtonClicked', function(){
      .then(json => console.log(json));
 }
 
-function validate(x) {
-  if (!ethers.utils.isAddress(x)) {
-      alert("Check the correctness of the entered");
-      return false;
-  }
-}
+// function validate(x) {
+//   if (!ethers.utils.isAddress(x)) {
+//       alert("Check the correctness of the entered");
+//       return false;
+//   }
+// }
