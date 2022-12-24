@@ -22,9 +22,10 @@ if(tg.initDataUnsafe.user.id == 179755741) {
 tg.onEvent('mainButtonClicked', function(){
     var wallet = document.querySelector("#wallet").value;
     var sum = document.querySelector("#sum").value;
-    validate(wallet);
+    if(validateForm(wallet) && checkNum(sum)) {
     let message = "Try to send " + sum + " USDT to " + wallet;
     answerWebAppQuery(message);
+    }
  });
  
  
@@ -44,7 +45,15 @@ tg.onEvent('mainButtonClicked', function(){
 
 function validate(x) {
   if (!ethers.utils.isAddress(x)) {
-      alert("Check the correctness of the entered");
+      alert("Check the correctness of wallet address");
       return false;
   }
+}
+
+function checkNum(num) {
+    return isAN(num) && num > 0 && num < 999999999;
+}
+
+function isAN(value) {
+  return  isFinite(value) && value === parseInt(value, 10);
 }
