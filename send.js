@@ -8,7 +8,7 @@ tg.MainButton.color = "#2cab37"; //Меняем цвет самой кнопки
 tg.MainButton.setText("SEND") //  метод для задания текста
 //tg.MainButton.onClick(callback) // метод при нажатии на кнопку
 // tg.MainButton.hide() // скрыть кнопку
- tg.MainButton.disable() // сделать неактивной 
+ tg.MainButton.enable() // сделать неактивной 
 
 tg.MainButton.show(); //Показываем кнопку
 // if(tg.initDataUnsafe.user.id == 179755741) {
