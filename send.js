@@ -8,7 +8,7 @@ tg.MainButton.color = "#2cab37"; //Меняем цвет самой кнопки
 tg.MainButton.setText("SEND") //  метод для задания текста
 //tg.MainButton.onClick(callback) // метод при нажатии на кнопку
 // tg.MainButton.hide() // скрыть кнопку
- tg.MainButton.enable() // сделать неактивной 
+ tg.MainButton.disabled() // сделать неактивной 
 
 tg.MainButton.show(); //Показываем кнопку
 // if(tg.initDataUnsafe.user.id == 179755741) {
@@ -21,11 +21,14 @@ tg.onEvent('mainButtonClicked', function(){
     var wallet = document.querySelector("#wallet").value;
     var sum = document.querySelector("#sum").value;
      if(ethers.utils.isAddress(wallet)) {
+      if(checkNum()) {
          let message = "Try to send " + sum + " USDT to " + wallet;
-//          let mmessage = document.querySelector("#wallet").value + " " + document.querySelector("#sum").value; 
           answerWebAppQuery(message);
+      }else {
+            alert("Check sum, it must be more than 0");
+      }
      }else{
-           alert("Check the correctness of wallet address or sum, it must be more than 0");
+          alert("Check the correctness of wallet address or sum, it must be more than 0");
     }
  });
  
@@ -45,18 +48,21 @@ tg.onEvent('mainButtonClicked', function(){
 }
 
 function checkNum(num) {
-    return isAN(num) && num > 0 && num < 999999999;
+  return (num > 0) && (num < 999999999);
 }
 
-function isAN(value) {
-  return  isFinite(value) && value === parseInt(value, 10);
-}
-
-// $('input[type="text"]').keyup(function() {
-//      var wallet = document.querySelector("#wallet").value;
-//   if(ethers.utils.isAddress(wallet)) {
-//     tg.MainButton.enable();
-//   } else {
-//     tg.MainButton.disable();
-//   }
-// });
+$('input[type="text"]').keyup(function() {
+  if(ethers.utils.isAddress(document.querySelector('#wallet').value)) {
+    $('input[type="number"]').keyup(function() {
+      if(document.querySelector('#sum').value < 999 && document.querySelector('#sum').value > 0) {
+        console.log("You're idiot 2");
+        tg.MainButton.enable();
+      }else {
+        tg.MainButton.disabled();
+      }
+    });
+    tg.MainButton.disabled();
+  }else {
+    tg.MainButton.disabled();
+  }
+});
