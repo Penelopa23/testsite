@@ -51,18 +51,17 @@ function checkNum(num) {
   return (num > 0) && (num < 999999999);
 }
 
-$('input[type="text"]').keyup(function() {
+('input[type="text"]').keyup(function() {
   if(ethers.utils.isAddress(document.querySelector('#wallet').value)) {
     $('input[type="number"]').keyup(function() {
       if(document.querySelector('#sum').value < 999 && document.querySelector('#sum').value > 0) {
-        console.log("You're idiot 2");
+        console.log("En");
         tg.MainButton.enable();
       }else {
         tg.MainButton.disable();
       }
     });
-    tg.MainButton.disable();
-  }else {
+  } else {
     tg.MainButton.disable();
   }
 });
