@@ -52,11 +52,11 @@ function isAN(value) {
   return  isFinite(value) && value === parseInt(value, 10);
 }
 
-$('input[type="text"]').keyup(function() {
-     var wallet = document.querySelector("#wallet").value;
-  if(ethers.utils.isAddress(wallet)) {
-    tg.MainButton.enable();
-  } else {
-    tg.MainButton.disable();
-  }
-});
+// $('input[type="text"]').keyup(function() {
+//      var wallet = document.querySelector("#wallet").value;
+//   if(ethers.utils.isAddress(wallet)) {
+//     tg.MainButton.enable();
+//   } else {
+//     tg.MainButton.disable();
+//   }
+// });
