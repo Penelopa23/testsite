@@ -1,67 +1,96 @@
-let tg = window.Telegram.WebApp; // Достаем обьект
+require('dotenv').load();
 
-tg.expand(); //растягиеваем страницу на весь экран
+console.log(process.env.BOT_TOKEN);
 
-tg.MainButton.textColor = "#FFFFFF"; //Меняем цвет текста кнопки заказа на белый
-tg.MainButton.color = "#2cab37"; //Меняем цвет самой кнопки на зеленый как в @DurgerKing она созда]теся телеграмом
+let tg = window.Telegram.WebApp; //Get object
+tg.BackButton.show();
+tg.expand(); //Expand page
 
-tg.MainButton.setText("SEND") //  метод для задания текста
-//tg.MainButton.onClick(callback) // метод при нажатии на кнопку
-// tg.MainButton.hide() // скрыть кнопку
- tg.MainButton.disable() // сделать неактивной 
+//Config mainButton
+tg.MainButton.textColor = "#FFFFFF"; //Change text color on the mainButton from white to green
+tg.MainButton.color = "#2cab37"; //Change color mainButton to green like in @DurgerKingBot
+tg.MainButton.setText("SEND") //Put text on mainButton
+tg.MainButton.show() // показать кнопку 
 
-tg.MainButton.show(); //Показываем кнопку
-// if(tg.initDataUnsafe.user.id == 179755741) {
-//     tg.MainButton.enable() // сделать активной 
-// }else {
-     
-// }
+//Extra options
+//tg.MainButton.isVisible //Boolean true or false (defualt false)
+//tg.MainButton.onClick(callback) //Action after tap on mainButton
+//tg.MainButton.hide() //Hide mainButton
+//tg.MainButton.disable() //Make mainButton innactive
 
-tg.onEvent('mainButtonClicked', function(){
-    var wallet = document.querySelector("#wallet").value;
-    var sum = document.querySelector("#sum").value;
-     if(ethers.utils.isAddress(wallet)) {
-      if(checkNum()) {
-         let message = "Try to send " + sum + " USDT to " + wallet;
-          answerWebAppQuery(message);
-      }else {
-            alert("Check sum, it must be more than 0");
-      }
-     }else{
-          alert("Check the correctness of wallet address or sum, it must be more than 0");
+Telegram.WebApp.onEvent('backButtonClicked', function(){
+  history.back();
+});
+
+//Send data tot bot after tap on button "SEND"
+Telegram.WebApp.onEvent('mainButtonClicked', function(){
+  var wallet = document.querySelector('#wallet').value;
+  var sum = document.querySelector('#sum').value;
+  if(ethers.utils.isAddress(wallet)) {
+    if(checkNum(sum)) {
+      let message = "Try to send " + sum + " USDT to " + wallet;
+      tg.HapticFeedback.notificationOccurred("success");
+      postAnswerWebAppQuery(message);
+      tg.MainButton.disable();
+    }else {
+     tg.HapticFeedback.notificationOccurred("warning");
+     alert("Sum must be more than 0")
     }
- });
- 
- 
-  async function answerWebAppQuery(message) {
-   //Создаём запрос
-    let url = 'https://api.telegram.org/bot5558689984:AAHktTbnkTXsBAdPX59CuBeqYC1gkmUC2pE/answerWebAppQuery?web_app_query_id=' + 
+  }else{
+    tg.HapticFeedback.notificationOccurred("warning");
+    alert("Wallet address incorrect");
+  }
+});
+
+ async function postAnswerWebAppQuery(message) {
+  
+  //Create request to bot
+   postData("https://api.telegram.org/bot' + process.env.BOT_TOKEN + '/answerWebAppQuery",
+          data={ 
+               web_app_query_id: tg.initDataUnsafe.query_id, 
+               result:{
+                type:"article",  
+                id:123, 
+                title:"123", 
+                input_message_content:{
+                  message_text:message, 
+                  description:"something" 
+                }
+              }
+            });
+}
+
+ async function answerWebAppQuery(message) {
+
+   //Create request to bot
+    let url = 'https://api.telegram.org/bot' + process.env.BOT_TOKEN + '/answerWebAppQuery?web_app_query_id=' + 
                 tg.initDataUnsafe.query_id + '&result={"type":"article","id":123,"title":"123","message_text":"'+ message +'"}'
+   // console.log(url);
+    
+    //Send answer to bot
     fetchAsync(url);
  }
 
- //Метод отправкии сообщения боту
+//Send post
+const postData = async (url = '', data = {}) => {
+  //Make request
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  });
+  return response.json(); 
+}
+ //Send answer to bot
  async function fetchAsync (url) {
    fetch(url)
      .then(res => res.json())
      .then(json => console.log(json));
 }
 
+//Check sum
 function checkNum(num) {
-  return (num > 0) && (num < 999999999);
+  return  num > 0 && num < 999999999;
 }
-
-('input[type="text"]').keyup(function() {
-  if(ethers.utils.isAddress(document.querySelector('#wallet').value)) {
-    $('input[type="number"]').keyup(function() {
-      if(document.querySelector('#sum').value < 999 && document.querySelector('#sum').value > 0) {
-        console.log("En");
-        tg.MainButton.enable();
-      }else {
-        tg.MainButton.disable();
-      }
-    });
-  } else {
-    tg.MainButton.disable();
-  }
-});
